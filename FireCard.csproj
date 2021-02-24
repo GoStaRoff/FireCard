@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF9A7B2D-8337-4D19-A1A7-458E9A293F11}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FireCard</RootNamespace>
+    <AssemblyName>FireCard</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create.Designer.cs">
+      <DependentUpon>Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Line.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="MapThing.cs" />
+    <Compile Include="newItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newItem.Designer.cs">
+      <DependentUpon>newItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="oriTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oriTable.Designer.cs">
+      <DependentUpon>oriTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Soldier.cs" />
+    <Compile Include="TempPoint.cs" />
+    <Compile Include="Thing.cs" />
+    <EmbeddedResource Include="Create.resx">
+      <DependentUpon>Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newItem.resx">
+      <DependentUpon>newItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="oriTable.resx">
+      <DependentUpon>oriTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\author.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\create.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\description.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Marks\tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Marks\house.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\SizeAll.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\art204-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Cross.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\NO.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Marks\rip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Marks\skala.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Marks\valun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Marks\dot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Marks\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Marks\line2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\okop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\Ataka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\GRENADER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\GRENADERr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\MACHINE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\MACHINEr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\RIFLEMAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\RIFLEMANr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\TANK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\TANKr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\BMP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\BMPr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\BTR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\BTRr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\fon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\zonaV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\napryam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\fon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\213.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\231.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\312.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\132.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\Ataka3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\Ataka1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\Ataka2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\Enemy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\Enemy2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\Enemy3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\Baricade1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\Baricade2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\Baricade3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\erause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Pictures\move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\river.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\road.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

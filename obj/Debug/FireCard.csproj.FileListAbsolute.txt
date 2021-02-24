@@ -1,0 +1,25 @@
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\bin\Debug\FireCard.exe.config
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\bin\Debug\FireCard.exe
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\bin\Debug\FireCard.pdb
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\obj\Debug\FireCard.csprojAssemblyReference.cache
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\obj\Debug\FireCard.Form1.resources
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\obj\Debug\FireCard.Properties.Resources.resources
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\obj\Debug\FireCard.csproj.GenerateResource.cache
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\obj\Debug\FireCard.csproj.CoreCompileInputs.cache
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\obj\Debug\FireCard.exe
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\obj\Debug\FireCard.pdb
+C:\Users\GoStaR\Desktop\Робоча\Tactic\FireCard\obj\Debug\FireCard.Create.resources
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.csprojAssemblyReference.cache
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.Create.resources
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.Form1.resources
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.Properties.Resources.resources
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.csproj.GenerateResource.cache
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.csproj.CoreCompileInputs.cache
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.exe
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.pdb
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\bin\Debug\FireCard.exe.config
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\bin\Debug\FireCard.exe
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\bin\Debug\FireCard.pdb
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.newItem.resources
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.oriTable.resources
+C:\Users\gosta\OneDrive\Рабочий стол\Робоча\Tactic\FireCard\obj\Debug\FireCard.Order.resources
