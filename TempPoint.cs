@@ -1,7 +1,9 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace FireCard
 {
+    [Serializable]
     public class TempPoint
     {
         public TempPoint()

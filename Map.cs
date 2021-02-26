@@ -6,6 +6,7 @@ using System.Drawing.Drawing2D;
 namespace FireCard
 {
     public enum TypeSoilders { first, second, third }
+    [Serializable]
     public class Map
     {
         public List<TempPoint> TempPoints { get; set; }
@@ -22,7 +23,25 @@ namespace FireCard
         public List<List<Point>> Baricade { get; set; }
         public static TypeSoilders typeSoilders { get; set; }
         public List<MapThing > MapThings { get; set; }
-
+        public Map(List<TempPoint> tempPoints, Point enemy,Bitmap enemyPict, Bitmap zonaVPict, Point position
+            ,bool isMapEnabled,List<Soldier> drawedSoilders, string[] direction, List<Thing> things, List<List<Soldier>> soldiers, Point fireArea, List<MapThing> mapThings,
+            List<List<Point>> Baricade, TypeSoilders _typeSoilders)
+        {
+            TempPoints = tempPoints;
+            Enemy = enemy;
+            Position = position;
+            Direction = direction;
+            Things = things;
+            Soldiers = soldiers;
+            FireArea = fireArea;
+            MapThings = mapThings;
+            typeSoilders = _typeSoilders;
+            ZonaVPict = zonaVPict;
+            this.isMapEnabled = isMapEnabled;
+            EnemyPict = enemyPict;
+            DrawedSoilders = drawedSoilders;
+            this.Baricade = Baricade;
+        }
         public Map()
         {
             Soldiers = new List<List<Soldier>>()
@@ -80,17 +99,7 @@ namespace FireCard
 
         }
 
-        public Map(List<TempPoint> tempPoints, Point enemy, Point position, string[] direction, List<Thing> things, List<List<Soldier>> soldiers, Point fireArea, List<MapThing> mapThings)
-        {
-            TempPoints = tempPoints;
-            Enemy = enemy;
-            Position = position;
-            Direction = direction;
-            Things = things;
-            Soldiers = soldiers;
-            FireArea = fireArea;
-            MapThings = mapThings;
-        }
+       
 
         public void Draw(Graphics g)
         {

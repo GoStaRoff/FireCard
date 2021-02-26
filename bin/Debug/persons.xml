@@ -1,0 +1,436 @@
+<?xml version="1.0"?>
+<Map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TempPoints />
+  <Enemy>
+    <X>0</X>
+    <Y>0</Y>
+  </Enemy>
+  <ZonaVPict>
+    <Palette />
+  </ZonaVPict>
+  <Position>
+    <X>0</X>
+    <Y>425</Y>
+  </Position>
+  <isMapEnabled>false</isMapEnabled>
+  <DrawedSoilders>
+    <Soldier>
+      <Name>Командир відділення</Name>
+      <Position>
+        <X>360</X>
+        <Y>475</Y>
+      </Position>
+      <SoilderType>rifleman</SoilderType>
+      <ReservedPosition>
+        <X>364</X>
+        <Y>575</Y>
+      </ReservedPosition>
+      <Lines />
+    </Soldier>
+  </DrawedSoilders>
+  <Things />
+  <Soldiers>
+    <ArrayOfSoldier>
+      <Soldier>
+        <Name>Навідник-Оператор</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Механік-водій</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Старший стрілець</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Гранатометник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>grenade_launcher</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Стрілець-помічник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Кулеметник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>machine_gunner</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Кулеметник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>machine_gunner</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Снайпер</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>БМП</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>BMP</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+    </ArrayOfSoldier>
+    <ArrayOfSoldier>
+      <Soldier>
+        <Name>Командир відділення</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Навідник-Оператор</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Механік-водій</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Старший стрілець</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Гранатометник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>grenade_launcher</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Стрілець-помічник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Навідник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>machine_gunner</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Номер обслуги</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>machine_gunner</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Снайпер</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>БМП</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>BMP</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+    </ArrayOfSoldier>
+    <ArrayOfSoldier>
+      <Soldier>
+        <Name>Командир відділення</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Навідник-Оператор</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Механік-водій</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Старший стрілець</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Гранатометник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>grenade_launcher</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Стрілець-помічник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Кулеметник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>machine_gunner</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Кулеметник</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>machine_gunner</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>Стрілець-санітар</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>rifleman</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+      <Soldier>
+        <Name>БМП</Name>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+        </Position>
+        <SoilderType>BMP</SoilderType>
+        <ReservedPosition>
+          <X>0</X>
+          <Y>0</Y>
+        </ReservedPosition>
+        <Lines />
+      </Soldier>
+    </ArrayOfSoldier>
+  </Soldiers>
+  <FireArea>
+    <X>0</X>
+    <Y>0</Y>
+  </FireArea>
+  <Baricade>
+    <ArrayOfPoint />
+    <ArrayOfPoint />
+    <ArrayOfPoint />
+  </Baricade>
+  <MapThings />
+</Map>X>
+    <Y>0</Y>
+  </FireArea>
+  <Baricade>
+    <ArrayOfPoint />
+    <ArrayOfPoint />
+    <ArrayOfPoint />
+  </Baricade>
+  <MapThings />
+</Map>

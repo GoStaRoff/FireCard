@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace FireCard
 {
@@ -758,6 +760,7 @@ namespace FireCard
         {
             if (onPaintMode.Checked)
             {
+                previousState = state;
                 state = State.paint;
                 for (int i = 0; i < buttons.Count; i++)
                 {
@@ -790,6 +793,35 @@ namespace FireCard
                     }
                 }
             }
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(Map));
+
+            using (FileStream fs = new FileStream("persons.xml", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, myMap);
+            }
+        }
+
+        private void open_Click(object sender, EventArgs e)
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(Map));
+            Map newPerson = new Map();
+            using (FileStream fs = new FileStream("persons.xml", FileMode.OpenOrCreate))
+            {
+                try
+                {
+                    newPerson = (Map)formatter.Deserialize(fs);
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.ToString()) ;
+                }
+            }
+            myMap = newPerson;
+
         }
     }
 }

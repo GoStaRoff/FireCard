@@ -146,7 +146,7 @@
             // 
             this.create.Image = ((System.Drawing.Image)(resources.GetObject("create.Image")));
             this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(126, 22);
+            this.create.Size = new System.Drawing.Size(184, 26);
             this.create.Text = "Створити";
             this.create.Click += new System.EventHandler(this.create_Click);
             // 
@@ -154,21 +154,23 @@
             // 
             this.save.Image = ((System.Drawing.Image)(resources.GetObject("save.Image")));
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(126, 22);
+            this.save.Size = new System.Drawing.Size(184, 26);
             this.save.Text = "Зберегти";
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // open
             // 
             this.open.Image = ((System.Drawing.Image)(resources.GetObject("open.Image")));
             this.open.Name = "open";
-            this.open.Size = new System.Drawing.Size(126, 22);
+            this.open.Size = new System.Drawing.Size(184, 26);
             this.open.Text = "Відкрити";
+            this.open.Click += new System.EventHandler(this.open_Click);
             // 
             // exit
             // 
             this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(126, 22);
+            this.exit.Size = new System.Drawing.Size(184, 26);
             this.exit.Text = "Вийти";
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 

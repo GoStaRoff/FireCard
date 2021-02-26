@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace FireCard
 {
     public enum SoilderTypes { rifleman, machine_gunner, grenade_launcher, BTR, BMP, TANK }
+    [Serializable]
     public class Soldier
     {
         public Soldier()

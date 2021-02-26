@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace FireCard
 {
+    [Serializable]
     public class Line
     {
         public Line()

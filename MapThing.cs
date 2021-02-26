@@ -1,8 +1,10 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace FireCard
 {
     public enum thingType { grass, water , road, river}
+    [Serializable]
     public class MapThing
     {
         public MapThing()

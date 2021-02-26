@@ -3,6 +3,7 @@ using System;
 
 namespace FireCard
 {
+    [Serializable]
     public class Thing
     {
         public static string newItemName;
