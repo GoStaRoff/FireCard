@@ -1,18 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Text.Json.Serialization;
+using System.Xml.Serialization;
 
 namespace FireCard
 {
     public enum TypeSoilders { first, second, third }
-    [Serializable]
     public class Map
     {
         public List<TempPoint> TempPoints { get; set; }
         public Point Enemy { get; set; }
+        [JsonIgnore]
         public Bitmap EnemyPict { get; set; }
+
+        public string EnemyPictSer
+        {
+            get
+            { // serialize
+                ImageConverter converter = new ImageConverter();
+                return Convert.ToBase64String((byte[])converter.ConvertTo(EnemyPict, typeof(byte[])));
+            }
+            set
+            { // deserialize
+                var bytes = Convert.FromBase64String(value);
+                using (var ms = new MemoryStream(bytes))
+                    EnemyPict = new Bitmap(Bitmap.FromStream(ms));
+            }
+        }
+        [JsonIgnore]
         public Bitmap ZonaVPict { get; set; }
+
+        public string zonaVSer
+        {
+            get
+            { // serialize
+                ImageConverter converter = new ImageConverter();
+                return Convert.ToBase64String((byte[])converter.ConvertTo(ZonaVPict, typeof(byte[])));
+            }
+            set
+            { // deserialize
+                var bytes = Convert.FromBase64String(value);
+                using (var ms = new MemoryStream(bytes))
+                    ZonaVPict = new Bitmap(Bitmap.FromStream(ms));
+            }
+        }
         public Point Position { get; set; }
         public bool isMapEnabled { get; set; }
         public static string[] Direction { get; set; }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text.Json;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -794,34 +795,37 @@ namespace FireCard
                 }
             }
         }
-
         private void save_Click(object sender, EventArgs e)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(Map));
 
-            using (FileStream fs = new FileStream("persons.xml", FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, myMap);
-            }
+            saveFileDialog1.FileName = "new Map.map";
+            string json = JsonSerializer.Serialize<Map>(myMap);
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            File.WriteAllText(saveFileDialog1.FileName, json);
+            MessageBox.Show("Збережено");
         }
 
         private void open_Click(object sender, EventArgs e)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(Map));
-            Map newPerson = new Map();
-            using (FileStream fs = new FileStream("persons.xml", FileMode.OpenOrCreate))
+
+            string json = String.Empty;
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                try
+
+                //Read the contents of the file into a stream
+                var fileStream = openFileDialog1.OpenFile();
+
+                using (StreamReader reader = new StreamReader(fileStream))
                 {
-                    newPerson = (Map)formatter.Deserialize(fs);
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show(err.ToString()) ;
+                    json = reader.ReadToEnd();
                 }
             }
-            myMap = newPerson;
-
+            myMap = JsonSerializer.Deserialize<Map>(json);
+            UpdateMap();
         }
     }
 }

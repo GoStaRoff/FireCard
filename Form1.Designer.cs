@@ -106,6 +106,8 @@
             this.antiDirection = new System.Windows.Forms.Label();
             this.direction = new System.Windows.Forms.Label();
             this.Position = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.inventory.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -146,7 +148,7 @@
             // 
             this.create.Image = ((System.Drawing.Image)(resources.GetObject("create.Image")));
             this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(184, 26);
+            this.create.Size = new System.Drawing.Size(126, 22);
             this.create.Text = "Створити";
             this.create.Click += new System.EventHandler(this.create_Click);
             // 
@@ -154,7 +156,7 @@
             // 
             this.save.Image = ((System.Drawing.Image)(resources.GetObject("save.Image")));
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(184, 26);
+            this.save.Size = new System.Drawing.Size(126, 22);
             this.save.Text = "Зберегти";
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
@@ -162,7 +164,7 @@
             // 
             this.open.Image = ((System.Drawing.Image)(resources.GetObject("open.Image")));
             this.open.Name = "open";
-            this.open.Size = new System.Drawing.Size(184, 26);
+            this.open.Size = new System.Drawing.Size(126, 22);
             this.open.Text = "Відкрити";
             this.open.Click += new System.EventHandler(this.open_Click);
             // 
@@ -170,7 +172,7 @@
             // 
             this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(184, 26);
+            this.exit.Size = new System.Drawing.Size(126, 22);
             this.exit.Text = "Вийти";
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
@@ -1072,6 +1074,10 @@
             this.Position.TabIndex = 8;
             this.Position.Text = "Position : ";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1184,6 +1190,8 @@
         private System.Windows.Forms.Button tDraw3;
         private System.Windows.Forms.Button tDraw2;
         private System.Windows.Forms.Button tDraw1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
