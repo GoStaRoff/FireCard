@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace FireCard
 {
-    public enum thingType { grass, water , road, river}
+    public enum thingType { garden, house , rip, river}
     [Serializable]
     public class MapThing
     {

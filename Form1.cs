@@ -311,13 +311,13 @@ namespace FireCard
                     switch (mapThing)
                     {
                         case "grass":
-                            myMap.MapThings.Add(new MapThing(thingType.grass, new Point(e.X, e.Y)));
+                            myMap.MapThings.Add(new MapThing(thingType.garden, new Point(e.X, e.Y)));
                             break;
                         case "water":
-                            myMap.MapThings.Add(new MapThing(thingType.water, new Point(e.X, e.Y)));
+                            myMap.MapThings.Add(new MapThing(thingType.house, new Point(e.X, e.Y)));
                             break;
                         case "road":
-                            myMap.MapThings.Add(new MapThing(thingType.road, new Point(e.X, e.Y)));
+                            myMap.MapThings.Add(new MapThing(thingType.rip, new Point(e.X, e.Y)));
                             break;
                         case "river":
                             myMap.MapThings.Add(new MapThing(thingType.river, new Point(e.X, e.Y)));

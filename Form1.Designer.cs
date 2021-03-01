@@ -703,7 +703,7 @@
             // 
             // tDraw3
             // 
-            this.tDraw3.BackgroundImage = global::FireCard.Properties.Resources.road;
+            this.tDraw3.BackgroundImage = global::FireCard.Properties.Resources.rip;
             this.tDraw3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tDraw3.Location = new System.Drawing.Point(210, 3);
             this.tDraw3.Margin = new System.Windows.Forms.Padding(2);
@@ -717,7 +717,7 @@
             // 
             // tDraw2
             // 
-            this.tDraw2.BackgroundImage = global::FireCard.Properties.Resources.water;
+            this.tDraw2.BackgroundImage = global::FireCard.Properties.Resources.house;
             this.tDraw2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tDraw2.Location = new System.Drawing.Point(118, 3);
             this.tDraw2.Margin = new System.Windows.Forms.Padding(2);
@@ -731,7 +731,7 @@
             // 
             // tDraw1
             // 
-            this.tDraw1.BackgroundImage = global::FireCard.Properties.Resources.grass;
+            this.tDraw1.BackgroundImage = global::FireCard.Properties.Resources.gardens;
             this.tDraw1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tDraw1.Location = new System.Drawing.Point(18, 2);
             this.tDraw1.Margin = new System.Windows.Forms.Padding(2);

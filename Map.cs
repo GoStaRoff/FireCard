@@ -144,17 +144,14 @@ namespace FireCard
             {
                 switch (MapThings[i].tThype)
                 {
-                    case thingType.grass:
-                         myBrush = new SolidBrush(Color.FromArgb(255, 0, 255, 0));
-                        g.FillRectangle(myBrush, new Rectangle(MapThings[i].Position.X - 35, MapThings[i].Position.Y - 35, 70, 70));
+                    case thingType.garden:
+                        g.DrawImage(Properties.Resources.gardens, MapThings[i].Position.X-40,MapThings[i].Position.Y-30 ,80, 60);
                         break;
-                    case thingType.water:
-                         myBrush = new SolidBrush(Color.FromArgb(255, 30, 144, 255));
-                        g.FillRectangle(myBrush, new Rectangle(MapThings[i].Position.X - 35, MapThings[i].Position.Y - 35, 70, 70));
+                    case thingType.house:
+                        g.DrawImage(Properties.Resources.house, MapThings[i].Position.X-20, MapThings[i].Position.Y-15, 40, 30);
                         break;
-                    case thingType.road:
-                         myBrush = new SolidBrush(Color.FromArgb(128, 0, 255, 0));
-                        g.FillRectangle(myBrush, new Rectangle(MapThings[i].Position.X - 35, MapThings[i].Position.Y - 35, 70, 70));
+                    case thingType.rip:
+                        g.DrawImage(Properties.Resources.rip, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
                         break;
                     case thingType.river:
                          myBrush = new SolidBrush(Color.FromArgb(128, 0, 255, 0));
