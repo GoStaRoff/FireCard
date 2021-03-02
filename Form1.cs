@@ -316,11 +316,17 @@ namespace FireCard
                         case "water":
                             myMap.MapThings.Add(new MapThing(thingType.house, new Point(e.X, e.Y)));
                             break;
-                        case "road":
+                        case "rip":
                             myMap.MapThings.Add(new MapThing(thingType.rip, new Point(e.X, e.Y)));
                             break;
-                        case "river":
-                            myMap.MapThings.Add(new MapThing(thingType.river, new Point(e.X, e.Y)));
+                        case "city":
+                            myMap.MapThings.Add(new MapThing(thingType.city, new Point(e.X, e.Y)));
+                            break;
+                        case "gas":
+                            myMap.MapThings.Add(new MapThing(thingType.gas, new Point(e.X, e.Y)));
+                            break;
+                        case "ruine":
+                            myMap.MapThings.Add(new MapThing(thingType.ruine, new Point(e.X, e.Y)));
                             break;
                     }
                     break;
@@ -693,10 +699,16 @@ namespace FireCard
                     mapThing = "water";
                     break;
                 case "tDraw3":
-                    mapThing = "road";
+                    mapThing = "rip";
                     break;
                 case "tDraw4":
-                    mapThing = "river";
+                    mapThing = "city";
+                    break;
+                case "tDraw5":
+                    mapThing = "gas";
+                    break;
+                case "tDraw6":
+                    mapThing = "ruine";
                     break;
 
             }

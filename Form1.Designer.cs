@@ -651,11 +651,12 @@
             // 
             // tDraw6
             // 
+            this.tDraw6.BackgroundImage = global::FireCard.Properties.Resources.ruine;
             this.tDraw6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw6.Location = new System.Drawing.Point(486, 3);
+            this.tDraw6.Location = new System.Drawing.Point(533, 4);
             this.tDraw6.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw6.Name = "tDraw6";
-            this.tDraw6.Size = new System.Drawing.Size(88, 53);
+            this.tDraw6.Size = new System.Drawing.Size(119, 53);
             this.tDraw6.TabIndex = 68;
             this.tDraw6.UseMnemonic = false;
             this.tDraw6.UseVisualStyleBackColor = true;
@@ -664,11 +665,12 @@
             // 
             // tDraw5
             // 
+            this.tDraw5.BackgroundImage = global::FireCard.Properties.Resources.gas;
             this.tDraw5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw5.Location = new System.Drawing.Point(394, 3);
+            this.tDraw5.Location = new System.Drawing.Point(434, 2);
             this.tDraw5.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw5.Name = "tDraw5";
-            this.tDraw5.Size = new System.Drawing.Size(88, 53);
+            this.tDraw5.Size = new System.Drawing.Size(103, 53);
             this.tDraw5.TabIndex = 67;
             this.tDraw5.UseMnemonic = false;
             this.tDraw5.UseVisualStyleBackColor = true;
@@ -677,12 +679,12 @@
             // 
             // tDraw4
             // 
-            this.tDraw4.BackgroundImage = global::FireCard.Properties.Resources.river;
+            this.tDraw4.BackgroundImage = global::FireCard.Properties.Resources.city;
             this.tDraw4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw4.Location = new System.Drawing.Point(302, 3);
+            this.tDraw4.Location = new System.Drawing.Point(317, 2);
             this.tDraw4.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw4.Name = "tDraw4";
-            this.tDraw4.Size = new System.Drawing.Size(88, 53);
+            this.tDraw4.Size = new System.Drawing.Size(128, 53);
             this.tDraw4.TabIndex = 66;
             this.tDraw4.UseMnemonic = false;
             this.tDraw4.UseVisualStyleBackColor = true;
@@ -705,10 +707,10 @@
             // 
             this.tDraw3.BackgroundImage = global::FireCard.Properties.Resources.rip;
             this.tDraw3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw3.Location = new System.Drawing.Point(210, 3);
+            this.tDraw3.Location = new System.Drawing.Point(211, 4);
             this.tDraw3.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw3.Name = "tDraw3";
-            this.tDraw3.Size = new System.Drawing.Size(88, 53);
+            this.tDraw3.Size = new System.Drawing.Size(106, 53);
             this.tDraw3.TabIndex = 65;
             this.tDraw3.UseMnemonic = false;
             this.tDraw3.UseVisualStyleBackColor = true;
@@ -722,7 +724,7 @@
             this.tDraw2.Location = new System.Drawing.Point(118, 3);
             this.tDraw2.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw2.Name = "tDraw2";
-            this.tDraw2.Size = new System.Drawing.Size(88, 53);
+            this.tDraw2.Size = new System.Drawing.Size(92, 53);
             this.tDraw2.TabIndex = 64;
             this.tDraw2.UseMnemonic = false;
             this.tDraw2.UseVisualStyleBackColor = true;
@@ -733,10 +735,10 @@
             // 
             this.tDraw1.BackgroundImage = global::FireCard.Properties.Resources.gardens;
             this.tDraw1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw1.Location = new System.Drawing.Point(18, 2);
+            this.tDraw1.Location = new System.Drawing.Point(0, 2);
             this.tDraw1.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw1.Name = "tDraw1";
-            this.tDraw1.Size = new System.Drawing.Size(88, 53);
+            this.tDraw1.Size = new System.Drawing.Size(122, 53);
             this.tDraw1.TabIndex = 63;
             this.tDraw1.UseMnemonic = false;
             this.tDraw1.UseVisualStyleBackColor = true;

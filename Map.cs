@@ -153,9 +153,14 @@ namespace FireCard
                     case thingType.rip:
                         g.DrawImage(Properties.Resources.rip, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
                         break;
-                    case thingType.river:
-                         myBrush = new SolidBrush(Color.FromArgb(128, 0, 255, 0));
-                        g.FillRectangle(myBrush, new Rectangle(MapThings[i].Position.X - 35, MapThings[i].Position.Y - 35, 70, 70));
+                    case thingType.city:
+                        g.DrawImage(Properties.Resources.city, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        break;
+                    case thingType.gas:
+                        g.DrawImage(Properties.Resources.gas, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
+                        break;
+                    case thingType.ruine:
+                        g.DrawImage(Properties.Resources.ruine, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15,70, 25);
                         break;
                     default:
                         break;

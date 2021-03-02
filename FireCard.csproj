@@ -349,5 +349,14 @@
   <ItemGroup>
     <None Include="Assets\rip.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\city.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\gas.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\ruine.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
