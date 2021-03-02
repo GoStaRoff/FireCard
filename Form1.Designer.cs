@@ -667,10 +667,10 @@
             // 
             this.tDraw5.BackgroundImage = global::FireCard.Properties.Resources.gas;
             this.tDraw5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw5.Location = new System.Drawing.Point(434, 2);
+            this.tDraw5.Location = new System.Drawing.Point(421, 2);
             this.tDraw5.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw5.Name = "tDraw5";
-            this.tDraw5.Size = new System.Drawing.Size(103, 53);
+            this.tDraw5.Size = new System.Drawing.Size(116, 53);
             this.tDraw5.TabIndex = 67;
             this.tDraw5.UseMnemonic = false;
             this.tDraw5.UseVisualStyleBackColor = true;
@@ -684,7 +684,7 @@
             this.tDraw4.Location = new System.Drawing.Point(317, 2);
             this.tDraw4.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw4.Name = "tDraw4";
-            this.tDraw4.Size = new System.Drawing.Size(128, 53);
+            this.tDraw4.Size = new System.Drawing.Size(102, 53);
             this.tDraw4.TabIndex = 66;
             this.tDraw4.UseMnemonic = false;
             this.tDraw4.UseVisualStyleBackColor = true;

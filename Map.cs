@@ -139,7 +139,6 @@ namespace FireCard
 
         public void Draw(Graphics g)
         {
-            SolidBrush myBrush;
             for (int i = 0; i < MapThings.Count; i++)
             {
                 switch (MapThings[i].tThype)
