@@ -56,12 +56,12 @@ namespace FireCard
         public List<Thing> Things { get; set; }
         public List<List<Soldier>> Soldiers { get; set; }
         public Point FireArea { get; set; }
-        public List<List<Point>> Baricade { get; set; }
+        public List<List<List<Point>>> Baricade { get; set; } //CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT 
         public static TypeSoilders typeSoilders { get; set; }
-        public List<MapThing > MapThings { get; set; }
-        public Map(List<TempPoint> tempPoints, Point enemy,Bitmap enemyPict, Bitmap zonaVPict, Point position
-            ,bool isMapEnabled,List<Soldier> drawedSoilders, string[] direction, List<Thing> things, List<List<Soldier>> soldiers, Point fireArea, List<MapThing> mapThings,
-            List<List<Point>> Baricade, TypeSoilders _typeSoilders)
+        public List<MapThing> MapThings { get; set; }
+        public Map(List<TempPoint> tempPoints, Point enemy, Bitmap enemyPict, Bitmap zonaVPict, Point position
+            , bool isMapEnabled, List<Soldier> drawedSoilders, string[] direction, List<Thing> things, List<List<Soldier>> soldiers, Point fireArea, List<MapThing> mapThings,
+            List<List<List<Point>>> Baricade, TypeSoilders _typeSoilders)
         {
             TempPoints = tempPoints;
             Enemy = enemy;
@@ -124,18 +124,18 @@ namespace FireCard
             Enemy = new Point(0, 0);
             TempPoints = new List<TempPoint>();
             Position = new Point(0, 425);
-            Baricade = new List<List<Point>>()
+            Baricade = new List<List<List<Point>>>()
             {
-                new List<Point>(),
-                new List<Point>(),
-                new List<Point>()
+                new List<List<Point>>(),
+                new List<List<Point>>(),
+                new List<List<Point>>()
             };
             DrawedSoilders = new List<Soldier>();
             MapThings = new List<MapThing>();
 
         }
 
-       
+
 
         public void Draw(Graphics g)
         {
@@ -144,10 +144,10 @@ namespace FireCard
                 switch (MapThings[i].tThype)
                 {
                     case thingType.garden:
-                        g.DrawImage(Properties.Resources.gardens, MapThings[i].Position.X-40,MapThings[i].Position.Y-30 ,80, 60);
+                        g.DrawImage(Properties.Resources.gardens, MapThings[i].Position.X - 40, MapThings[i].Position.Y - 30, 80, 60);
                         break;
                     case thingType.house:
-                        g.DrawImage(Properties.Resources.house, MapThings[i].Position.X-20, MapThings[i].Position.Y-15, 40, 30);
+                        g.DrawImage(Properties.Resources.house, MapThings[i].Position.X - 20, MapThings[i].Position.Y - 15, 40, 30);
                         break;
                     case thingType.rip:
                         g.DrawImage(Properties.Resources.rip, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
@@ -159,7 +159,7 @@ namespace FireCard
                         g.DrawImage(Properties.Resources.gas, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
                         break;
                     case thingType.ruine:
-                        g.DrawImage(Properties.Resources.ruine, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15,70, 25);
+                        g.DrawImage(Properties.Resources.ruine, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
                         break;
                     default:
                         break;
@@ -207,41 +207,91 @@ namespace FireCard
                         baricadeImg = Properties.Resources.Baricade3;
                         break;
                 }
-                if (Baricade[i].Count > 1)
+                for (int j = 0; j < Baricade[i].Count; j++)
                 {
-                    for (int j = 1; j < Baricade[i].Count; j++)
+                    
+                    if (Baricade[i][j].Count > 1)
                     {
-                        g.DrawImage(baricadeImg, Baricade[i][j - 1].X - 7, Baricade[i][j - 1].Y - 7, 14, 14);
-                        g.DrawLine(pen, Baricade[i][j - 1], Baricade[i][j]);
+                        for (int l = 1; l < Baricade[i][j].Count; l++)
+                        {
+                            g.DrawImage(baricadeImg, Baricade[i][j][l - 1].X - 7, Baricade[i][j][l - 1].Y - 7, 14, 14);
+                            g.DrawLine(pen, Baricade[i][j][l - 1], Baricade[i][j][l]);
+                        }
+                        g.DrawImage(baricadeImg, Baricade[i][j][Baricade[i][j].Count - 1].X - 7, Baricade[i][j][Baricade[i][j].Count - 1].Y - 7, 14, 14);
                     }
-                    g.DrawImage(baricadeImg, Baricade[i][Baricade[i].Count - 1].X - 7, Baricade[i][Baricade[i].Count - 1].Y - 7, 14, 14);
-                }
-                else if (Baricade[i].Count == 1)
-                {
-                    g.DrawImage(baricadeImg, Baricade[i][0].X - 7, Baricade[i][0].Y - 7, 14, 14);
-                }
-            }
-            g.DrawImage(Properties.Resources.napryam, 30, 25, 20, 90);
 
-           
-            
+                    else if (Baricade[i][j].Count == 1)
+                    {
+                        g.DrawImage(baricadeImg, Baricade[i][j][0].X - 7, Baricade[i][j][0].Y - 7, 14, 14);
+                    }
+                }
+                g.DrawImage(Properties.Resources.napryam, 30, 25, 20, 90);
+            }
         }
         public override string ToString()
         {
             string res = String.Empty;
+            double sum = Double.MaxValue;
+            int thing_index = -1;
             for (int i = 0; i < DrawedSoilders.Count; i++)
             {
-                res += $" ---- {DrawedSoilders[i].Name} : зайняти позицію на координаті {DrawedSoilders[i].Position} та обороняти позицію відділення. ";
+                res += $" ---- {DrawedSoilders[i].Name} : зайняти позицію ";
+                String position = String.Empty;
+                for (int j = 0; j < Constants.namedPoints.Count; j++)
+                {
+                    if (DrawedSoilders[i].Position.X == Constants.namedPoints[j].Position.X && DrawedSoilders[i].Position.Y == Constants.namedPoints[j].Position.Y)
+                    {
+                        position = $"в \"{Constants.namedPoints[j].Name}\"";
+                        break;
+                    }
+                    else
+                    {
+
+                        double temp = Math.Sqrt(Math.Pow(DrawedSoilders[i].Position.X - Constants.namedPoints[j].Position.X, 2) +
+                                           Math.Pow(DrawedSoilders[i].Position.Y - Constants.namedPoints[j].Position.Y, 2));
+                        if (sum > temp)
+                        {
+                            sum = temp;
+                            thing_index = j;
+                        }
+
+                        position = $"позаду \"{Constants.namedPoints[thing_index].Name}\" на відстані {Math.Round(sum)}м";
+                    }
+                }
+                res += position + " та обороняти позицію відділення. ";
                 if (DrawedSoilders[i].ReservedPosition != new Point(0, 0))
                 {
-                    res += $"Запасна позиція поруч на координаті {DrawedSoilders[i].ReservedPosition}. ";
+                    res += $"Запасна позиція ";
+                    String reservedPosition = String.Empty;
+                    for (int j = 0; j < Constants.namedPoints.Count; j++)
+                    {
+                        if (DrawedSoilders[i].ReservedPosition.X == Constants.namedPoints[j].Position.X && DrawedSoilders[i].ReservedPosition.Y == Constants.namedPoints[j].Position.Y)
+                        {
+                            reservedPosition = $"в \"{Constants.namedPoints[j].Name}\". ";
+                            break;
+                        }
+                        else
+                        {
+
+                            double temp = Math.Sqrt(Math.Pow(DrawedSoilders[i].ReservedPosition.X - Constants.namedPoints[j].Position.X, 2) +
+                                               Math.Pow(DrawedSoilders[i].ReservedPosition.Y - Constants.namedPoints[j].Position.Y, 2));
+                            if (sum > temp)
+                            {
+                                sum = temp;
+                                thing_index = j;
+                            }
+
+                            reservedPosition = $"позаду \"{Constants.namedPoints[thing_index].Name}\" на відстані {Math.Round(sum)}м. ";
+                        }
+                    }
+                    res += reservedPosition;
                 }
                 res += "Смуги вогню : " + Environment.NewLine;
-                double sum = Double.MaxValue;
-                int thing_index = -1;
+                sum = Double.MaxValue;
+                thing_index = -1;
                 for (int j = 0; j < DrawedSoilders[i].Lines.Count; j++)
                 {
-                    res += $"{j+1}) ";
+                    res += $"{j + 1}) ";
                     sum = Double.MaxValue;
                     for (int k = 0; k < Things.Count; k++)
                     {

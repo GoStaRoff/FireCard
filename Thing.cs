@@ -38,8 +38,8 @@ namespace FireCard
             g.DrawLine(pen, new Point(Position.X, Position.Y + 35), new Point(Position.X, Position.Y - 35));
             g.DrawString($"Ор№{index + 1}", new Font("Times New Roman", 10.0f), new SolidBrush(Color.Black), new Point(Position.X - 43, Position.Y - 15));
             g.DrawString(Name, new Font("Times New Roman", 10.0f), new SolidBrush(Color.Black), new Point(Position.X, Position.Y - 15));
-            g.DrawString(Direction + "m", new Font("Times New Roman", 10.0f), new SolidBrush(Color.Black), new Point(Position.X, Position.Y));
-            g.DrawString(Highth + "m", new Font("Times New Roman", 10.0f), new SolidBrush(Color.Black), new Point(Position.X-43, Position.Y));
+            g.DrawString("d=" + Direction + "m", new Font("Times New Roman", 10.0f), new SolidBrush(Color.Black), new Point(Position.X, Position.Y));
+            g.DrawString("h=" + Highth + "m", new Font("Times New Roman", 10.0f), new SolidBrush(Color.Black), new Point(Position.X-43, Position.Y));
         }
     }
 }

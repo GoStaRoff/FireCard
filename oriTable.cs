@@ -26,6 +26,7 @@ namespace FireCard
                 dataGridView1.Rows[i].Cells[0].Value = i + 1;
                 dataGridView1.Rows[i].Cells[1].Value = map.Things[i].Name;
                 dataGridView1.Rows[i].Cells[2].Value = map.Things[i].Direction;
+                dataGridView1.Rows[i].Cells[3].Value = map.Things[i].Highth;
             }
         }
     }

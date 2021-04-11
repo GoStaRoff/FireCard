@@ -28,7 +28,6 @@ C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\bin\Debug\FireCard.exe
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\bin\Debug\FireCard.pdb
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.csprojAssemblyReference.cache
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.Create.resources
-C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.Form1.resources
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.newItem.resources
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.Order.resources
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.oriTable.resources
@@ -56,3 +55,8 @@ C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\bin\Debug\System.Text.Json.xml
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\bin\Debug\System.ValueTuple.xml
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.csproj.CopyComplete
+C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\bin\Debug\FireCard.exe.manifest
+C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\bin\Debug\FireCard.application
+C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.exe.manifest
+C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.application
+C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.Constants.resources

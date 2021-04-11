@@ -23,8 +23,14 @@ namespace FireCard
             PointColor = pointColor;
         }
 
+        public TempPoint(Point position, Color pointColor, string name) : this(position, pointColor)
+        {
+            Name = name;
+        }
+
         public Point Position { get; set; }
         public Color PointColor { get; set; }
+        public String Name { get; set; }
 
         public void Draw(Graphics g)
         {

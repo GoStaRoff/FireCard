@@ -13,6 +13,21 @@ using System.Xml.Serialization;
 namespace FireCard
 {
     enum State { r1, r2, r3, r4, r5, r6, final, erause, move, reserved, paint }
+
+    public class Constants
+    {
+        public static List<TempPoint> namedPoints = new List<TempPoint>
+                    {
+                        new TempPoint(new Point(195,487), Color.LightGreen, "Позиція №1"), //191,482
+                        new TempPoint(new Point(255,460), Color.LightGreen, "Позиція №2"),//250,455
+                        new TempPoint(new Point(305,461), Color.LightGreen, "Позиція №3"),//299,453
+                        new TempPoint(new Point(360,475), Color.LightGreen, "Позиція №4"),//354,470
+                        new TempPoint(new Point(410,475), Color.LightGreen, "Позиція №5"),//403,472
+                        new TempPoint(new Point(472,455), Color.LightGreen, "Позиція №6"),//467,451
+                        new TempPoint(new Point(520,485), Color.LightGreen, "Позиція №7")//515,482
+                    };
+    }
+
     public partial class Form1 : Form
     {
         Graphics g;
@@ -266,7 +281,7 @@ namespace FireCard
                     myMap.FireArea = new Point(e.X, e.Y);
                     break;
                 case State.r5:
-                    myMap.Baricade[choosed_baricade].Add(new Point(e.X, e.Y));
+                    myMap.Baricade[choosed_baricade][myMap.Baricade[choosed_baricade].Count-1].Add(new Point(e.X, e.Y));
                     break;
                 case State.r6:
                     if (lineCounter == 1)
@@ -430,7 +445,6 @@ namespace FireCard
         {
             map.Cursor = Cursors.Arrow;
             Button button = (Button)sender;
-            Console.WriteLine(button.Name);
             if (button.Text.Equals("Продовжити"))
             {
                 button.Text = "Готово";
@@ -496,16 +510,7 @@ namespace FireCard
                             buttons[i].Enabled = true;
                         }
                     }
-                    myMap.TempPoints = new List<TempPoint>
-                    {
-                        new TempPoint(new Point(195,487), Color.LightGreen), //191,482
-                        new TempPoint(new Point(255,460), Color.LightGreen),//250,455
-                        new TempPoint(new Point(305,461), Color.LightGreen),//299,453
-                        new TempPoint(new Point(360,475), Color.LightGreen),//354,470
-                        new TempPoint(new Point(410,475), Color.LightGreen),//403,472
-                        new TempPoint(new Point(472,455), Color.LightGreen),//467,451
-                        new TempPoint(new Point(520,485), Color.LightGreen)//515,482
-                    };
+                    myMap.TempPoints = Constants.namedPoints.ToList();
                     posLabel.Visible = true;
                     state = State.r3;
                     break;
@@ -667,12 +672,15 @@ namespace FireCard
                     break;
                 case "baricade1":
                     choosed_baricade = 0;
+                    myMap.Baricade[choosed_baricade].Add(new List<Point>());
                     break;
                 case "baricade2":
                     choosed_baricade = 1;
+                    myMap.Baricade[choosed_baricade].Add(new List<Point>());
                     break;
                 case "baricade3":
                     choosed_baricade = 2;
+                    myMap.Baricade[choosed_baricade].Add(new List<Point>());
                     break;
                 case "fire1":
                     myMap.ZonaVPict = Resources._123;

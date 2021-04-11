@@ -146,7 +146,6 @@
             // 
             // create
             // 
-            this.create.Image = ((System.Drawing.Image)(resources.GetObject("create.Image")));
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(126, 22);
             this.create.Text = "Створити";
@@ -154,7 +153,6 @@
             // 
             // save
             // 
-            this.save.Image = ((System.Drawing.Image)(resources.GetObject("save.Image")));
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(126, 22);
             this.save.Text = "Зберегти";
@@ -162,7 +160,6 @@
             // 
             // open
             // 
-            this.open.Image = ((System.Drawing.Image)(resources.GetObject("open.Image")));
             this.open.Name = "open";
             this.open.Size = new System.Drawing.Size(126, 22);
             this.open.Text = "Відкрити";
@@ -170,7 +167,6 @@
             // 
             // exit
             // 
-            this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(126, 22);
             this.exit.Text = "Вийти";
@@ -188,7 +184,6 @@
             // 
             // exportMap
             // 
-            this.exportMap.Image = ((System.Drawing.Image)(resources.GetObject("exportMap.Image")));
             this.exportMap.Name = "exportMap";
             this.exportMap.Size = new System.Drawing.Size(183, 22);
             this.exportMap.Text = "Експортувати карту";
@@ -219,7 +214,6 @@
             // 
             // description
             // 
-            this.description.Image = ((System.Drawing.Image)(resources.GetObject("description.Image")));
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(161, 22);
             this.description.Text = "Опис програми";
@@ -227,7 +221,6 @@
             // 
             // creators
             // 
-            this.creators.Image = ((System.Drawing.Image)(resources.GetObject("creators.Image")));
             this.creators.Name = "creators";
             this.creators.Size = new System.Drawing.Size(161, 22);
             this.creators.Text = "Розробники";
@@ -1091,7 +1084,6 @@
             this.Controls.Add(this.inventory);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
