@@ -59,4 +59,4 @@ C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\bin\Debug\FireCard.exe.manifes
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\bin\Debug\FireCard.application
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.exe.manifest
 C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.application
-C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.Constants.resources
+C:\Users\gosta\OneDrive\Documents\GitHub\FireCard\obj\Debug\FireCard.Form1.resources

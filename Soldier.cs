@@ -66,7 +66,7 @@ namespace FireCard
             }
             for (int i = 0; i < Lines.Count; i++)
             {
-                if (i == 2) pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+                if (i == 2) pen.DashPattern = new float[] { 6F, 6F }; ;
                 Lines[i].Draw(g, pen);
             }
         }

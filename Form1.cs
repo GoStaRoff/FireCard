@@ -12,22 +12,6 @@ using System.Xml.Serialization;
 
 namespace FireCard
 {
-    enum State { r1, r2, r3, r4, r5, r6, final, erause, move, reserved, paint }
-
-    public class Constants
-    {
-        public static List<TempPoint> namedPoints = new List<TempPoint>
-                    {
-                        new TempPoint(new Point(195,487), Color.LightGreen, "Позиція №1"), //191,482
-                        new TempPoint(new Point(255,460), Color.LightGreen, "Позиція №2"),//250,455
-                        new TempPoint(new Point(305,461), Color.LightGreen, "Позиція №3"),//299,453
-                        new TempPoint(new Point(360,475), Color.LightGreen, "Позиція №4"),//354,470
-                        new TempPoint(new Point(410,475), Color.LightGreen, "Позиція №5"),//403,472
-                        new TempPoint(new Point(472,455), Color.LightGreen, "Позиція №6"),//467,451
-                        new TempPoint(new Point(520,485), Color.LightGreen, "Позиція №7")//515,482
-                    };
-    }
-
     public partial class Form1 : Form
     {
         Graphics g;
@@ -281,7 +265,7 @@ namespace FireCard
                     myMap.FireArea = new Point(e.X, e.Y);
                     break;
                 case State.r5:
-                    myMap.Baricade[choosed_baricade][myMap.Baricade[choosed_baricade].Count-1].Add(new Point(e.X, e.Y));
+                    myMap.Baricade[choosed_baricade][myMap.Baricade[choosed_baricade].Count - 1].Add(new Point(e.X, e.Y));
                     break;
                 case State.r6:
                     if (lineCounter == 1)
@@ -356,7 +340,7 @@ namespace FireCard
             this.Enabled = true;
             if (Thing.idAdding)
             {
-                myMap.Things.Add(new Thing(new Point(x, y), Thing.newItemName, Thing.newItemDirection.ToString(),Thing.newItemHighth.ToString()));
+                myMap.Things.Add(new Thing(new Point(x, y), Thing.newItemName, Thing.newItemDirection.ToString(), Thing.newItemHighth.ToString()));
                 Thing.idAdding = false;
             }
             UpdateMap();
@@ -795,7 +779,7 @@ namespace FireCard
                         buttons[i].Visible = true;
                         buttons[i].Enabled = true;
                     }
-                
+
                 }
             }
             else
@@ -847,5 +831,20 @@ namespace FireCard
             myMap = JsonSerializer.Deserialize<Map>(json);
             UpdateMap();
         }
+    }
+    enum State { r1, r2, r3, r4, r5, r6, final, erause, move, reserved, paint }
+
+    public class Constants
+    {
+        public static List<TempPoint> namedPoints = new List<TempPoint>
+                    {
+                        new TempPoint(new Point(195,487), Color.LightGreen, "Позиція №1"), //191,482
+                        new TempPoint(new Point(255,460), Color.LightGreen, "Позиція №2"),//250,455
+                        new TempPoint(new Point(305,461), Color.LightGreen, "Позиція №3"),//299,453
+                        new TempPoint(new Point(360,475), Color.LightGreen, "Позиція №4"),//354,470
+                        new TempPoint(new Point(410,475), Color.LightGreen, "Позиція №5"),//403,472
+                        new TempPoint(new Point(472,455), Color.LightGreen, "Позиція №6"),//467,451
+                        new TempPoint(new Point(520,485), Color.LightGreen, "Позиція №7")//515,482
+                    };
     }
 }

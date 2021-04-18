@@ -84,8 +84,6 @@ namespace FireCard
             {
                 new List<Soldier>{
                     new Soldier("Командир відділення", SoilderTypes.rifleman),
-                    new Soldier("Навідник-Оператор", SoilderTypes.rifleman),
-                    new Soldier("Механік-водій", SoilderTypes.rifleman),
                     new Soldier("Старший стрілець", SoilderTypes.rifleman),
                     new Soldier("Гранатометник", SoilderTypes.grenade_launcher),
                     new Soldier("Стрілець-помічник", SoilderTypes.rifleman),
@@ -96,8 +94,6 @@ namespace FireCard
                 },
                 new List<Soldier>{
                     new Soldier("Командир відділення", SoilderTypes.rifleman),
-                    new Soldier("Навідник-Оператор", SoilderTypes.rifleman),
-                    new Soldier("Механік-водій", SoilderTypes.rifleman),
                     new Soldier("Старший стрілець", SoilderTypes.rifleman),
                     new Soldier("Гранатометник", SoilderTypes.grenade_launcher),
                     new Soldier("Стрілець-помічник", SoilderTypes.rifleman),
@@ -108,8 +104,6 @@ namespace FireCard
                 },
                 new List<Soldier>{
                     new Soldier("Командир відділення", SoilderTypes.rifleman),
-                    new Soldier("Навідник-Оператор", SoilderTypes.rifleman),
-                    new Soldier("Механік-водій", SoilderTypes.rifleman),
                     new Soldier("Старший стрілець", SoilderTypes.rifleman),
                     new Soldier("Гранатометник", SoilderTypes.grenade_launcher),
                     new Soldier("Стрілець-помічник", SoilderTypes.rifleman),
