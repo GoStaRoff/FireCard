@@ -48,7 +48,7 @@ namespace FireCard
                 baricade1,baricade2,baricade3,
                 fire1,fire2,fire3,fire4,fire5,fire6,
                 paint0,paint1,paint2,paint3,paint4,paint5,paint6,paint7,paint8,
-                tDraw1,tDraw2,tDraw3,tDraw4,tDraw5,tDraw6
+                tDraw1,tDraw2,tDraw3,tDraw4,tDraw5,tDraw6,tDraw7,tDraw8,tDraw9,tDraw10,tDraw11
             };
             for (int i = 0; i < buttons.Count; i++)
             {

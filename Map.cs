@@ -144,7 +144,7 @@ namespace FireCard
                 switch (MapThings[i].tThype)
                 {
                     case thingType.water:
-                        g.DrawImage(Properties.Resources.water, MapThings[i].Position.X - 40, MapThings[i].Position.Y - 30, 80, 60);
+                        g.DrawImage(Properties.Resources.water, MapThings[i].Position.X - 30, MapThings[i].Position.Y - 25, 60, 50);
                         break;
                     case thingType.house:
                         g.DrawImage(Properties.Resources.house, MapThings[i].Position.X - 20, MapThings[i].Position.Y - 15, 40, 30);
@@ -153,28 +153,28 @@ namespace FireCard
                         g.DrawImage(Properties.Resources.vishka, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
                         break;
                     case thingType.virubka:
-                        g.DrawImage(Properties.Resources.virubka, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        g.DrawImage(Properties.Resources.virubka, MapThings[i].Position.X - 25, MapThings[i].Position.Y - 15, 50, 25);
                         break;
                     case thingType.tree:
                         g.DrawImage(Properties.Resources.tree, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
                         break;
                     case thingType.sad:
-                        g.DrawImage(Properties.Resources.sad, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        g.DrawImage(Properties.Resources.sad, MapThings[i].Position.X - 25, MapThings[i].Position.Y - 15, 50, 25);
                         break;
                     case thingType.pamyatnik:
-                        g.DrawImage(Properties.Resources.pamyatnik, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        g.DrawImage(Properties.Resources.pamyatnik, MapThings[i].Position.X - 15, MapThings[i].Position.Y - 15, 30, 30);
                         break;
                     case thingType.kuschi:
-                        g.DrawImage(Properties.Resources.kuschi, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        g.DrawImage(Properties.Resources.kuschi, MapThings[i].Position.X - 20, MapThings[i].Position.Y - 15, 40, 25);
                         break;
                     case thingType.kurgan:
-                        g.DrawImage(Properties.Resources.kurgan, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        g.DrawImage(Properties.Resources.kurgan, MapThings[i].Position.X - 15, MapThings[i].Position.Y - 15, 30, 30);
                         break;
                     case thingType.kamni:
-                        g.DrawImage(Properties.Resources.kamni, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        g.DrawImage(Properties.Resources.kamni, MapThings[i].Position.X - 20, MapThings[i].Position.Y - 15, 40, 25);
                         break;
                     case thingType.cerkva:
-                        g.DrawImage(Properties.Resources.cerkva, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        g.DrawImage(Properties.Resources.cerkva, MapThings[i].Position.X - 15, MapThings[i].Position.Y - 15, 30, 30);
                         break;
                     default:
                         break;

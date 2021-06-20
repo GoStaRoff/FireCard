@@ -73,12 +73,17 @@
             this.person3 = new System.Windows.Forms.Button();
             this.person1 = new System.Windows.Forms.Button();
             this.persons = new System.Windows.Forms.Panel();
+            this.tDraw11 = new System.Windows.Forms.Button();
+            this.tDraw10 = new System.Windows.Forms.Button();
+            this.tDraw9 = new System.Windows.Forms.Button();
+            this.tDraw8 = new System.Windows.Forms.Button();
+            this.tDraw7 = new System.Windows.Forms.Button();
             this.tDraw6 = new System.Windows.Forms.Button();
             this.tDraw5 = new System.Windows.Forms.Button();
             this.tDraw4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tDraw3 = new System.Windows.Forms.Button();
             this.tDraw2 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tDraw1 = new System.Windows.Forms.Button();
             this.paint7 = new System.Windows.Forms.Button();
             this.paint8 = new System.Windows.Forms.Button();
@@ -613,12 +618,17 @@
             // persons
             // 
             this.persons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.persons.Controls.Add(this.tDraw11);
+            this.persons.Controls.Add(this.tDraw10);
+            this.persons.Controls.Add(this.tDraw9);
+            this.persons.Controls.Add(this.tDraw8);
+            this.persons.Controls.Add(this.tDraw7);
             this.persons.Controls.Add(this.tDraw6);
             this.persons.Controls.Add(this.tDraw5);
             this.persons.Controls.Add(this.tDraw4);
-            this.persons.Controls.Add(this.button2);
             this.persons.Controls.Add(this.tDraw3);
             this.persons.Controls.Add(this.tDraw2);
+            this.persons.Controls.Add(this.button2);
             this.persons.Controls.Add(this.tDraw1);
             this.persons.Controls.Add(this.paint7);
             this.persons.Controls.Add(this.paint8);
@@ -655,14 +665,85 @@
             this.persons.Size = new System.Drawing.Size(731, 58);
             this.persons.TabIndex = 3;
             // 
+            // tDraw11
+            // 
+            this.tDraw11.BackgroundImage = global::FireCard.Properties.Resources.water;
+            this.tDraw11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tDraw11.Location = new System.Drawing.Point(630, 4);
+            this.tDraw11.Margin = new System.Windows.Forms.Padding(2);
+            this.tDraw11.Name = "tDraw11";
+            this.tDraw11.Size = new System.Drawing.Size(58, 53);
+            this.tDraw11.TabIndex = 76;
+            this.tDraw11.UseMnemonic = false;
+            this.tDraw11.UseVisualStyleBackColor = true;
+            this.tDraw11.Visible = false;
+            this.tDraw11.Click += new System.EventHandler(this.person_Click);
+            // 
+            // tDraw10
+            // 
+            this.tDraw10.BackgroundImage = global::FireCard.Properties.Resources.vishka;
+            this.tDraw10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tDraw10.Location = new System.Drawing.Point(568, 4);
+            this.tDraw10.Margin = new System.Windows.Forms.Padding(2);
+            this.tDraw10.Name = "tDraw10";
+            this.tDraw10.Size = new System.Drawing.Size(58, 53);
+            this.tDraw10.TabIndex = 75;
+            this.tDraw10.UseMnemonic = false;
+            this.tDraw10.UseVisualStyleBackColor = true;
+            this.tDraw10.Visible = false;
+            this.tDraw10.Click += new System.EventHandler(this.person_Click);
+            // 
+            // tDraw9
+            // 
+            this.tDraw9.BackgroundImage = global::FireCard.Properties.Resources.virubka;
+            this.tDraw9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tDraw9.Location = new System.Drawing.Point(503, 4);
+            this.tDraw9.Margin = new System.Windows.Forms.Padding(2);
+            this.tDraw9.Name = "tDraw9";
+            this.tDraw9.Size = new System.Drawing.Size(58, 53);
+            this.tDraw9.TabIndex = 74;
+            this.tDraw9.UseMnemonic = false;
+            this.tDraw9.UseVisualStyleBackColor = true;
+            this.tDraw9.Visible = false;
+            this.tDraw9.Click += new System.EventHandler(this.person_Click);
+            // 
+            // tDraw8
+            // 
+            this.tDraw8.BackgroundImage = global::FireCard.Properties.Resources.tree;
+            this.tDraw8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tDraw8.Location = new System.Drawing.Point(440, 3);
+            this.tDraw8.Margin = new System.Windows.Forms.Padding(2);
+            this.tDraw8.Name = "tDraw8";
+            this.tDraw8.Size = new System.Drawing.Size(58, 53);
+            this.tDraw8.TabIndex = 73;
+            this.tDraw8.UseMnemonic = false;
+            this.tDraw8.UseVisualStyleBackColor = true;
+            this.tDraw8.Visible = false;
+            this.tDraw8.Click += new System.EventHandler(this.person_Click);
+            // 
+            // tDraw7
+            // 
+            this.tDraw7.BackgroundImage = global::FireCard.Properties.Resources.sad;
+            this.tDraw7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tDraw7.Location = new System.Drawing.Point(378, 3);
+            this.tDraw7.Margin = new System.Windows.Forms.Padding(2);
+            this.tDraw7.Name = "tDraw7";
+            this.tDraw7.Size = new System.Drawing.Size(58, 53);
+            this.tDraw7.TabIndex = 72;
+            this.tDraw7.UseMnemonic = false;
+            this.tDraw7.UseVisualStyleBackColor = true;
+            this.tDraw7.Visible = false;
+            this.tDraw7.Click += new System.EventHandler(this.person_Click);
+            // 
             // tDraw6
             // 
+            this.tDraw6.BackgroundImage = global::FireCard.Properties.Resources.pamyatnik;
             this.tDraw6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw6.Location = new System.Drawing.Point(533, 4);
+            this.tDraw6.Location = new System.Drawing.Point(313, 3);
             this.tDraw6.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw6.Name = "tDraw6";
-            this.tDraw6.Size = new System.Drawing.Size(119, 53);
-            this.tDraw6.TabIndex = 68;
+            this.tDraw6.Size = new System.Drawing.Size(58, 53);
+            this.tDraw6.TabIndex = 71;
             this.tDraw6.UseMnemonic = false;
             this.tDraw6.UseVisualStyleBackColor = true;
             this.tDraw6.Visible = false;
@@ -670,12 +751,13 @@
             // 
             // tDraw5
             // 
+            this.tDraw5.BackgroundImage = global::FireCard.Properties.Resources.kuschi;
             this.tDraw5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw5.Location = new System.Drawing.Point(421, 2);
+            this.tDraw5.Location = new System.Drawing.Point(251, 3);
             this.tDraw5.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw5.Name = "tDraw5";
-            this.tDraw5.Size = new System.Drawing.Size(116, 53);
-            this.tDraw5.TabIndex = 67;
+            this.tDraw5.Size = new System.Drawing.Size(58, 53);
+            this.tDraw5.TabIndex = 70;
             this.tDraw5.UseMnemonic = false;
             this.tDraw5.UseVisualStyleBackColor = true;
             this.tDraw5.Visible = false;
@@ -683,16 +765,45 @@
             // 
             // tDraw4
             // 
+            this.tDraw4.BackgroundImage = global::FireCard.Properties.Resources.kurgan;
             this.tDraw4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw4.Location = new System.Drawing.Point(317, 2);
+            this.tDraw4.Location = new System.Drawing.Point(189, 2);
             this.tDraw4.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw4.Name = "tDraw4";
-            this.tDraw4.Size = new System.Drawing.Size(102, 53);
-            this.tDraw4.TabIndex = 66;
+            this.tDraw4.Size = new System.Drawing.Size(58, 53);
+            this.tDraw4.TabIndex = 69;
             this.tDraw4.UseMnemonic = false;
             this.tDraw4.UseVisualStyleBackColor = true;
             this.tDraw4.Visible = false;
             this.tDraw4.Click += new System.EventHandler(this.person_Click);
+            // 
+            // tDraw3
+            // 
+            this.tDraw3.BackgroundImage = global::FireCard.Properties.Resources.kamni;
+            this.tDraw3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tDraw3.Location = new System.Drawing.Point(127, 2);
+            this.tDraw3.Margin = new System.Windows.Forms.Padding(2);
+            this.tDraw3.Name = "tDraw3";
+            this.tDraw3.Size = new System.Drawing.Size(58, 53);
+            this.tDraw3.TabIndex = 68;
+            this.tDraw3.UseMnemonic = false;
+            this.tDraw3.UseVisualStyleBackColor = true;
+            this.tDraw3.Visible = false;
+            this.tDraw3.Click += new System.EventHandler(this.person_Click);
+            // 
+            // tDraw2
+            // 
+            this.tDraw2.BackgroundImage = global::FireCard.Properties.Resources.house;
+            this.tDraw2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tDraw2.Location = new System.Drawing.Point(62, 2);
+            this.tDraw2.Margin = new System.Windows.Forms.Padding(2);
+            this.tDraw2.Name = "tDraw2";
+            this.tDraw2.Size = new System.Drawing.Size(58, 53);
+            this.tDraw2.TabIndex = 67;
+            this.tDraw2.UseMnemonic = false;
+            this.tDraw2.UseVisualStyleBackColor = true;
+            this.tDraw2.Visible = false;
+            this.tDraw2.Click += new System.EventHandler(this.person_Click);
             // 
             // button2
             // 
@@ -706,40 +817,14 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             // 
-            // tDraw3
-            // 
-            this.tDraw3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw3.Location = new System.Drawing.Point(211, 4);
-            this.tDraw3.Margin = new System.Windows.Forms.Padding(2);
-            this.tDraw3.Name = "tDraw3";
-            this.tDraw3.Size = new System.Drawing.Size(106, 53);
-            this.tDraw3.TabIndex = 65;
-            this.tDraw3.UseMnemonic = false;
-            this.tDraw3.UseVisualStyleBackColor = true;
-            this.tDraw3.Visible = false;
-            this.tDraw3.Click += new System.EventHandler(this.person_Click);
-            // 
-            // tDraw2
-            // 
-            this.tDraw2.BackgroundImage = global::FireCard.Properties.Resources.house;
-            this.tDraw2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tDraw2.Location = new System.Drawing.Point(118, 3);
-            this.tDraw2.Margin = new System.Windows.Forms.Padding(2);
-            this.tDraw2.Name = "tDraw2";
-            this.tDraw2.Size = new System.Drawing.Size(92, 53);
-            this.tDraw2.TabIndex = 64;
-            this.tDraw2.UseMnemonic = false;
-            this.tDraw2.UseVisualStyleBackColor = true;
-            this.tDraw2.Visible = false;
-            this.tDraw2.Click += new System.EventHandler(this.person_Click);
-            // 
             // tDraw1
             // 
+            this.tDraw1.BackgroundImage = global::FireCard.Properties.Resources.cerkva;
             this.tDraw1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tDraw1.Location = new System.Drawing.Point(0, 2);
             this.tDraw1.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw1.Name = "tDraw1";
-            this.tDraw1.Size = new System.Drawing.Size(122, 53);
+            this.tDraw1.Size = new System.Drawing.Size(58, 53);
             this.tDraw1.TabIndex = 63;
             this.tDraw1.UseMnemonic = false;
             this.tDraw1.UseVisualStyleBackColor = true;
@@ -1187,16 +1272,21 @@
         private System.Windows.Forms.Button paint1;
         private System.Windows.Forms.Button paint2;
         private System.Windows.Forms.Button paint0;
-        private System.Windows.Forms.Button tDraw6;
-        private System.Windows.Forms.Button tDraw5;
-        private System.Windows.Forms.Button tDraw4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button tDraw3;
-        private System.Windows.Forms.Button tDraw2;
         private System.Windows.Forms.Button tDraw1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button undo;
+        private System.Windows.Forms.Button tDraw11;
+        private System.Windows.Forms.Button tDraw10;
+        private System.Windows.Forms.Button tDraw9;
+        private System.Windows.Forms.Button tDraw8;
+        private System.Windows.Forms.Button tDraw7;
+        private System.Windows.Forms.Button tDraw6;
+        private System.Windows.Forms.Button tDraw5;
+        private System.Windows.Forms.Button tDraw4;
+        private System.Windows.Forms.Button tDraw3;
+        private System.Windows.Forms.Button tDraw2;
     }
 }
 
