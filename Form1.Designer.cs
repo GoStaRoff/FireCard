@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.create = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +44,7 @@
             this.oriTableB = new System.Windows.Forms.ToolStripMenuItem();
             this.generateButton = new System.Windows.Forms.ToolStripMenuItem();
             this.inventory = new System.Windows.Forms.Panel();
+            this.undo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.offPaintMode = new System.Windows.Forms.RadioButton();
             this.onPaintMode = new System.Windows.Forms.RadioButton();
@@ -244,6 +244,7 @@
             // inventory
             // 
             this.inventory.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.inventory.Controls.Add(this.undo);
             this.inventory.Controls.Add(this.groupBox2);
             this.inventory.Controls.Add(this.erauseB);
             this.inventory.Controls.Add(this.moveB);
@@ -267,6 +268,18 @@
             this.inventory.Name = "inventory";
             this.inventory.Size = new System.Drawing.Size(128, 694);
             this.inventory.TabIndex = 2;
+            // 
+            // undo
+            // 
+            this.undo.BackgroundImage = global::FireCard.Properties.Resources.undo;
+            this.undo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.undo.Location = new System.Drawing.Point(51, 43);
+            this.undo.Margin = new System.Windows.Forms.Padding(2);
+            this.undo.Name = "undo";
+            this.undo.Size = new System.Drawing.Size(31, 31);
+            this.undo.TabIndex = 44;
+            this.undo.UseVisualStyleBackColor = true;
+            this.undo.Click += new System.EventHandler(this.undo_Click);
             // 
             // groupBox2
             // 
@@ -311,10 +324,10 @@
             // 
             this.erauseB.BackgroundImage = global::FireCard.Properties.Resources.erause;
             this.erauseB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.erauseB.Location = new System.Drawing.Point(68, 31);
+            this.erauseB.Location = new System.Drawing.Point(68, 0);
             this.erauseB.Margin = new System.Windows.Forms.Padding(2);
             this.erauseB.Name = "erauseB";
-            this.erauseB.Size = new System.Drawing.Size(60, 65);
+            this.erauseB.Size = new System.Drawing.Size(60, 53);
             this.erauseB.TabIndex = 43;
             this.erauseB.UseVisualStyleBackColor = true;
             this.erauseB.Click += new System.EventHandler(this.mark_Click);
@@ -323,10 +336,10 @@
             // 
             this.moveB.BackgroundImage = global::FireCard.Properties.Resources.move;
             this.moveB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.moveB.Location = new System.Drawing.Point(0, 31);
+            this.moveB.Location = new System.Drawing.Point(0, 0);
             this.moveB.Margin = new System.Windows.Forms.Padding(2);
             this.moveB.Name = "moveB";
-            this.moveB.Size = new System.Drawing.Size(60, 65);
+            this.moveB.Size = new System.Drawing.Size(64, 53);
             this.moveB.TabIndex = 42;
             this.moveB.UseVisualStyleBackColor = true;
             this.moveB.Click += new System.EventHandler(this.mark_Click);
@@ -512,7 +525,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(20, 7);
+            this.label1.Location = new System.Drawing.Point(19, 76);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 21);
@@ -644,7 +657,6 @@
             // 
             // tDraw6
             // 
-            this.tDraw6.BackgroundImage = global::FireCard.Properties.Resources.ruine;
             this.tDraw6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tDraw6.Location = new System.Drawing.Point(533, 4);
             this.tDraw6.Margin = new System.Windows.Forms.Padding(2);
@@ -658,7 +670,6 @@
             // 
             // tDraw5
             // 
-            this.tDraw5.BackgroundImage = global::FireCard.Properties.Resources.gas;
             this.tDraw5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tDraw5.Location = new System.Drawing.Point(421, 2);
             this.tDraw5.Margin = new System.Windows.Forms.Padding(2);
@@ -672,7 +683,6 @@
             // 
             // tDraw4
             // 
-            this.tDraw4.BackgroundImage = global::FireCard.Properties.Resources.city;
             this.tDraw4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tDraw4.Location = new System.Drawing.Point(317, 2);
             this.tDraw4.Margin = new System.Windows.Forms.Padding(2);
@@ -698,7 +708,6 @@
             // 
             // tDraw3
             // 
-            this.tDraw3.BackgroundImage = global::FireCard.Properties.Resources.rip;
             this.tDraw3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tDraw3.Location = new System.Drawing.Point(211, 4);
             this.tDraw3.Margin = new System.Windows.Forms.Padding(2);
@@ -726,7 +735,6 @@
             // 
             // tDraw1
             // 
-            this.tDraw1.BackgroundImage = global::FireCard.Properties.Resources.gardens;
             this.tDraw1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tDraw1.Location = new System.Drawing.Point(0, 2);
             this.tDraw1.Margin = new System.Windows.Forms.Padding(2);
@@ -1084,10 +1092,12 @@
             this.Controls.Add(this.inventory);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "FireCard";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.inventory.ResumeLayout(false);
@@ -1186,6 +1196,7 @@
         private System.Windows.Forms.Button tDraw1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button undo;
     }
 }
 

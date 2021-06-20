@@ -233,9 +233,9 @@ namespace FireCard.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap city {
+        public static System.Drawing.Bitmap cerkva {
             get {
-                object obj = ResourceManager.GetObject("city", resourceCulture);
+                object obj = ResourceManager.GetObject("cerkva", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,36 +353,6 @@ namespace FireCard.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap gardens {
-            get {
-                object obj = ResourceManager.GetObject("gardens", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap gas {
-            get {
-                object obj = ResourceManager.GetObject("gas", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap grass {
-            get {
-                object obj = ResourceManager.GetObject("grass", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap GRENADER {
             get {
                 object obj = ResourceManager.GetObject("GRENADER", resourceCulture);
@@ -417,6 +387,36 @@ namespace FireCard.Properties {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap kamni {
+            get {
+                object obj = ResourceManager.GetObject("kamni", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap kurgan {
+            get {
+                object obj = ResourceManager.GetObject("kurgan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap kuschi {
+            get {
+                object obj = ResourceManager.GetObject("kuschi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -523,6 +523,16 @@ namespace FireCard.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap pamyatnik {
+            get {
+                object obj = ResourceManager.GetObject("pamyatnik", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap RIFLEMAN {
             get {
                 object obj = ResourceManager.GetObject("RIFLEMAN", resourceCulture);
@@ -543,39 +553,9 @@ namespace FireCard.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap rip {
+        public static System.Drawing.Bitmap sad {
             get {
-                object obj = ResourceManager.GetObject("rip", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap river {
-            get {
-                object obj = ResourceManager.GetObject("river", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap road {
-            get {
-                object obj = ResourceManager.GetObject("road", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap ruine {
-            get {
-                object obj = ResourceManager.GetObject("ruine", resourceCulture);
+                object obj = ResourceManager.GetObject("sad", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -616,6 +596,46 @@ namespace FireCard.Properties {
         public static System.Drawing.Bitmap TANKr {
             get {
                 object obj = ResourceManager.GetObject("TANKr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap tree {
+            get {
+                object obj = ResourceManager.GetObject("tree", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap undo {
+            get {
+                object obj = ResourceManager.GetObject("undo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap virubka {
+            get {
+                object obj = ResourceManager.GetObject("virubka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap vishka {
+            get {
+                object obj = ResourceManager.GetObject("vishka", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

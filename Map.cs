@@ -28,8 +28,11 @@ namespace FireCard
             set
             { // deserialize
                 var bytes = Convert.FromBase64String(value);
-                using (var ms = new MemoryStream(bytes))
-                    EnemyPict = new Bitmap(Bitmap.FromStream(ms));
+                if (EnemyPict != null)
+                {
+                    using (var ms = new MemoryStream(bytes))
+                        EnemyPict = new Bitmap(Bitmap.FromStream(ms));
+                }
             }
         }
         [JsonIgnore]
@@ -45,8 +48,11 @@ namespace FireCard
             set
             { // deserialize
                 var bytes = Convert.FromBase64String(value);
-                using (var ms = new MemoryStream(bytes))
-                    ZonaVPict = new Bitmap(Bitmap.FromStream(ms));
+                if (EnemyPict != null)
+                {
+                    using (var ms = new MemoryStream(bytes))
+                        ZonaVPict = new Bitmap(Bitmap.FromStream(ms));
+                }
             }
         }
         public Point Position { get; set; }
@@ -137,23 +143,38 @@ namespace FireCard
             {
                 switch (MapThings[i].tThype)
                 {
-                    case thingType.garden:
-                        g.DrawImage(Properties.Resources.gardens, MapThings[i].Position.X - 40, MapThings[i].Position.Y - 30, 80, 60);
+                    case thingType.water:
+                        g.DrawImage(Properties.Resources.water, MapThings[i].Position.X - 40, MapThings[i].Position.Y - 30, 80, 60);
                         break;
                     case thingType.house:
                         g.DrawImage(Properties.Resources.house, MapThings[i].Position.X - 20, MapThings[i].Position.Y - 15, 40, 30);
                         break;
-                    case thingType.rip:
-                        g.DrawImage(Properties.Resources.rip, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
+                    case thingType.vishka:
+                        g.DrawImage(Properties.Resources.vishka, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
                         break;
-                    case thingType.city:
-                        g.DrawImage(Properties.Resources.city, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                    case thingType.virubka:
+                        g.DrawImage(Properties.Resources.virubka, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
                         break;
-                    case thingType.gas:
-                        g.DrawImage(Properties.Resources.gas, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
+                    case thingType.tree:
+                        g.DrawImage(Properties.Resources.tree, MapThings[i].Position.X - 10, MapThings[i].Position.Y - 20, 20, 40);
                         break;
-                    case thingType.ruine:
-                        g.DrawImage(Properties.Resources.ruine, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                    case thingType.sad:
+                        g.DrawImage(Properties.Resources.sad, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        break;
+                    case thingType.pamyatnik:
+                        g.DrawImage(Properties.Resources.pamyatnik, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        break;
+                    case thingType.kuschi:
+                        g.DrawImage(Properties.Resources.kuschi, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        break;
+                    case thingType.kurgan:
+                        g.DrawImage(Properties.Resources.kurgan, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        break;
+                    case thingType.kamni:
+                        g.DrawImage(Properties.Resources.kamni, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
+                        break;
+                    case thingType.cerkva:
+                        g.DrawImage(Properties.Resources.cerkva, MapThings[i].Position.X - 35, MapThings[i].Position.Y - 15, 70, 25);
                         break;
                     default:
                         break;
@@ -184,8 +205,10 @@ namespace FireCard
             {
                 g.DrawImage(ZonaVPict, FireArea.X - 40, FireArea.Y - 14, 80, 28);
             }
-            Pen pen = new Pen(Color.Green);
-            pen.Width = 3;
+            Pen greenPen = new Pen(Color.Green);
+            greenPen.Width = 3;
+            Pen blackPen = new Pen(Color.Black);
+            greenPen.Width = 3;
             Bitmap baricadeImg = Properties.Resources.Baricade1;
             for (int i = 0; i < Baricade.Count; i++)
             {
@@ -206,10 +229,39 @@ namespace FireCard
                     
                     if (Baricade[i][j].Count > 1)
                     {
-                        for (int l = 1; l < Baricade[i][j].Count; l++)
+                        if (i != 0)
                         {
-                            g.DrawImage(baricadeImg, Baricade[i][j][l - 1].X - 7, Baricade[i][j][l - 1].Y - 7, 14, 14);
-                            g.DrawLine(pen, Baricade[i][j][l - 1], Baricade[i][j][l]);
+                            for (int l = 1; l < Baricade[i][j].Count; l++)
+                            {
+                                if (l == 1)
+                                {
+                                    g.DrawImage(baricadeImg, Baricade[i][j][l - 1].X - 7, Baricade[i][j][l - 1].Y - 7, 14, 14);
+                                    g.DrawLine(blackPen, new Point(Baricade[i][j][l - 1].X - 30, Baricade[i][j][l - 1].Y + 15), new Point(Baricade[i][j][l].X, Baricade[i][j][l].Y + 15));
+                                    g.DrawLine(blackPen, new Point(Baricade[i][j][l - 1].X - 30, Baricade[i][j][l - 1].Y - 15), new Point(Baricade[i][j][l].X, Baricade[i][j][l].Y - 15));
+                                    g.DrawLine(blackPen, new Point(Baricade[i][j][l - 1].X - 30, Baricade[i][j][l - 1].Y - 15), new Point(Baricade[i][j][l - 1].X - 30, Baricade[i][j][l - 1].Y + 15));
+                                }
+                                else if (l == Baricade[i][j].Count - 1)
+                                {
+                                    g.DrawImage(baricadeImg, Baricade[i][j][l - 1].X - 7, Baricade[i][j][l - 1].Y - 7, 14, 14);
+                                    g.DrawLine(blackPen, new Point(Baricade[i][j][l - 1].X, Baricade[i][j][l - 1].Y + 15), new Point(Baricade[i][j][l].X + 30, Baricade[i][j][l].Y + 15));
+                                    g.DrawLine(blackPen, new Point(Baricade[i][j][l - 1].X, Baricade[i][j][l - 1].Y - 15), new Point(Baricade[i][j][l].X + 30, Baricade[i][j][l].Y - 15));
+                                    g.DrawLine(blackPen, new Point(Baricade[i][j][l].X + 30, Baricade[i][j][l].Y + 15), new Point(Baricade[i][j][l].X + 30, Baricade[i][j][l].Y - 15));
+                                }
+                                else
+                                {
+                                    g.DrawImage(baricadeImg, Baricade[i][j][l - 1].X - 7, Baricade[i][j][l - 1].Y - 7, 14, 14);
+                                    g.DrawLine(blackPen, new Point(Baricade[i][j][l - 1].X, Baricade[i][j][l - 1].Y + 15), new Point(Baricade[i][j][l].X, Baricade[i][j][l].Y + 15));
+                                    g.DrawLine(blackPen, new Point(Baricade[i][j][l - 1].X, Baricade[i][j][l - 1].Y - 15), new Point(Baricade[i][j][l].X, Baricade[i][j][l].Y - 15));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int l = 1; l < Baricade[i][j].Count; l++)
+                            {
+                                g.DrawImage(baricadeImg, Baricade[i][j][l - 1].X - 7, Baricade[i][j][l - 1].Y - 7, 14, 14);
+                                g.DrawLine(greenPen, Baricade[i][j][l - 1], Baricade[i][j][l]);
+                            }
                         }
                         g.DrawImage(baricadeImg, Baricade[i][j][Baricade[i][j].Count - 1].X - 7, Baricade[i][j][Baricade[i][j].Count - 1].Y - 7, 14, 14);
                     }

@@ -17,7 +17,8 @@ namespace FireCard
         Graphics g;
         State previousState;
         State state;
-        Map myMap;
+        List<Map> maps;
+        Map currentMap;
         int checker = -1;
         bool IsClicked = false;
         List<Button> buttons;
@@ -33,7 +34,12 @@ namespace FireCard
         {
             InitializeComponent();
             state = State.r1;
-            myMap = new Map();
+            currentMap = new Map();
+            maps = new List<Map>();
+            string mapJSON = JsonSerializer.Serialize<Map>(currentMap);
+            Map newMap = JsonSerializer.Deserialize<Map>(mapJSON);
+            maps.Add(newMap);
+            
             buttons = new List<Button>()
             {
                 ready1,ready2,ready3,ready4,ready5,ready6,
@@ -127,7 +133,7 @@ namespace FireCard
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            Order order = new Order(myMap);
+            Order order = new Order(currentMap);
             order.Show();
         }
 
@@ -142,7 +148,7 @@ namespace FireCard
         private void Create_FormClosed(object sender, FormClosedEventArgs e)
         {
             state = State.r1;
-            myMap = new Map();
+            currentMap = new Map();
             Enabled = true;
             direction.Text = Map.Direction[0];
             antiDirection.Text = Map.Direction[1];
@@ -171,14 +177,14 @@ namespace FireCard
         {
             if (onMap.Checked)
             {
-                myMap.isMapEnabled = true;
+                currentMap.isMapEnabled = true;
             }
             else
             {
-                myMap.isMapEnabled = false;
+                currentMap.isMapEnabled = false;
             }
             g.Clear(Color.AliceBlue);
-            myMap.Draw(g);
+            currentMap.Draw(g);
         }
 
         private void map_MouseClick(object sender, MouseEventArgs e)
@@ -196,16 +202,16 @@ namespace FireCard
                     break;
                 case State.r2:
                     mousePosition = CheckPoints(e);
-                    for (int i = 0; i < myMap.TempPoints.Count; i++)
+                    for (int i = 0; i < currentMap.TempPoints.Count; i++)
                     {
                         if (i == mousePosition)
                         {
-                            myMap.TempPoints[i].PointColor = Color.Red;
-                            myMap.Enemy = myMap.TempPoints[i].Position;
+                            currentMap.TempPoints[i].PointColor = Color.Red;
+                            currentMap.Enemy = currentMap.TempPoints[i].Position;
                         }
                         else
                         {
-                            myMap.TempPoints[i].PointColor = Color.LightGreen;
+                            currentMap.TempPoints[i].PointColor = Color.LightGreen;
                         }
                     }
                     break;
@@ -215,19 +221,19 @@ namespace FireCard
                         mousePosition = CheckPoints(e);
                         if (mousePosition != -1)
                         {
-                            myMap.Soldiers[soilder_index][choosed_soilder].Position = myMap.TempPoints[mousePosition].Position;
-                            myMap.DrawedSoilders.Add(myMap.Soldiers[soilder_index][choosed_soilder]);
-                            myMap.Soldiers[soilder_index].RemoveAt(choosed_soilder);
+                            currentMap.Soldiers[soilder_index][choosed_soilder].Position = currentMap.TempPoints[mousePosition].Position;
+                            currentMap.DrawedSoilders.Add(currentMap.Soldiers[soilder_index][choosed_soilder]);
+                            currentMap.Soldiers[soilder_index].RemoveAt(choosed_soilder);
                             choosed_soilder = -1;
-                            myMap.TempPoints.RemoveAt(mousePosition);
+                            currentMap.TempPoints.RemoveAt(mousePosition);
                             state = State.reserved;
                             MessageBox.Show("Оберіть запасну позицію або іншого військового");
                         }
                         else if (mousePosition == -1 && e.Y > 489)
                         {
-                            myMap.Soldiers[soilder_index][choosed_soilder].Position = new Point(e.X, e.Y);
-                            myMap.DrawedSoilders.Add(myMap.Soldiers[soilder_index][choosed_soilder]);
-                            myMap.Soldiers[soilder_index].RemoveAt(choosed_soilder);
+                            currentMap.Soldiers[soilder_index][choosed_soilder].Position = new Point(e.X, e.Y);
+                            currentMap.DrawedSoilders.Add(currentMap.Soldiers[soilder_index][choosed_soilder]);
+                            currentMap.Soldiers[soilder_index].RemoveAt(choosed_soilder);
                             choosed_soilder = -1;
                             state = State.reserved;
                             MessageBox.Show("Оберіть запасну позицію або іншого військового");
@@ -247,13 +253,13 @@ namespace FireCard
                     mousePosition = CheckPoints(e);
                     if (mousePosition != -1)
                     {
-                        myMap.DrawedSoilders[myMap.DrawedSoilders.Count - 1].ReservedPosition = myMap.TempPoints[mousePosition].Position;
-                        myMap.TempPoints.RemoveAt(mousePosition);
+                        currentMap.DrawedSoilders[currentMap.DrawedSoilders.Count - 1].ReservedPosition = currentMap.TempPoints[mousePosition].Position;
+                        currentMap.TempPoints.RemoveAt(mousePosition);
                         state = State.r3;
                     }
                     else if (mousePosition == -1 && e.Y > 489)
                     {
-                        myMap.DrawedSoilders[myMap.DrawedSoilders.Count - 1].ReservedPosition = new Point(e.X, e.Y);
+                        currentMap.DrawedSoilders[currentMap.DrawedSoilders.Count - 1].ReservedPosition = new Point(e.X, e.Y);
                         state = State.r3;
                     }
                     else
@@ -262,34 +268,35 @@ namespace FireCard
                     }
                     break;
                 case State.r4:
-                    myMap.FireArea = new Point(e.X, e.Y);
+                    currentMap.FireArea = new Point(e.X, e.Y);
                     break;
                 case State.r5:
-                    myMap.Baricade[choosed_baricade][myMap.Baricade[choosed_baricade].Count - 1].Add(new Point(e.X, e.Y));
+                    currentMap.Baricade[choosed_baricade][currentMap.Baricade[choosed_baricade].Count - 1].Add(new Point(e.X, e.Y));
                     break;
                 case State.r6:
                     if (lineCounter == 1)
                     {
-                        choosed_liner = CheckLiner(e);
+                        bool isReversed = CheckLiner(e,out choosed_liner);
+                        Console.WriteLine(isReversed);
                         if (choosed_liner == -1)
                         {
                             return;
                         }
-                        if (myMap.DrawedSoilders[choosed_liner].Lines.Count == 3)
+                        if (currentMap.DrawedSoilders[choosed_liner].Lines.Count == 3)
                         {
                             MessageBox.Show("Не може бути більше смуг вогню");
                             return;
                         }
-                        myMap.DrawedSoilders[choosed_liner].Lines.Add(new Line(myMap.DrawedSoilders[choosed_liner].Position));
+                        currentMap.DrawedSoilders[choosed_liner].Lines.Add(new Line(currentMap.DrawedSoilders[choosed_liner].Position));
                         lineCounter++;
                     }
                     else if (lineCounter == 2)
                     {
-                        for (int i = 0; i < myMap.DrawedSoilders[choosed_liner].Lines.Count; i++)
+                        for (int i = 0; i < currentMap.DrawedSoilders[choosed_liner].Lines.Count; i++)
                         {
-                            if (myMap.DrawedSoilders[choosed_liner].Lines[i].EndPoint == new Point(0, 0))
+                            if (currentMap.DrawedSoilders[choosed_liner].Lines[i].EndPoint == new Point(0, 0))
                             {
-                                myMap.DrawedSoilders[choosed_liner].Lines[i].EndPoint = new Point(e.X, e.Y);
+                                currentMap.DrawedSoilders[choosed_liner].Lines[i].EndPoint = new Point(e.X, e.Y);
                             }
                         }
                         lineCounter = 1;
@@ -304,34 +311,52 @@ namespace FireCard
                 case State.erause:
                     Check_Mouse(e, out int temp);
                     if (temp == -1) return;
-                    myMap.Things.Remove(myMap.Things[temp]);
+                    currentMap.Things.Remove(currentMap.Things[temp]);
                     break;
                 case State.paint:
                     switch (mapThing)
                     {
-                        case "grass":
-                            myMap.MapThings.Add(new MapThing(thingType.garden, new Point(e.X, e.Y)));
+                        case "cerkva":
+                            currentMap.MapThings.Add(new MapThing(thingType.cerkva, new Point(e.X, e.Y)));
+                            break;
+                        case "house":
+                            currentMap.MapThings.Add(new MapThing(thingType.house, new Point(e.X, e.Y)));
+                            break;
+                        case "kamni":
+                            currentMap.MapThings.Add(new MapThing(thingType.kamni, new Point(e.X, e.Y)));
+                            break;
+                        case "kurgan":
+                            currentMap.MapThings.Add(new MapThing(thingType.kurgan, new Point(e.X, e.Y)));
+                            break;
+                        case "kuschi":
+                            currentMap.MapThings.Add(new MapThing(thingType.kuschi, new Point(e.X, e.Y)));
+                            break;
+                        case "pamyatnik":
+                            currentMap.MapThings.Add(new MapThing(thingType.pamyatnik, new Point(e.X, e.Y)));
+                            break;
+                        case "sad":
+                            currentMap.MapThings.Add(new MapThing(thingType.sad, new Point(e.X, e.Y)));
+                            break;
+                        case "tree":
+                            currentMap.MapThings.Add(new MapThing(thingType.tree, new Point(e.X, e.Y)));
+                            break;
+                        case "virubka":
+                            currentMap.MapThings.Add(new MapThing(thingType.virubka, new Point(e.X, e.Y)));
+                            break;
+                        case "vishka":
+                            currentMap.MapThings.Add(new MapThing(thingType.vishka, new Point(e.X, e.Y)));
                             break;
                         case "water":
-                            myMap.MapThings.Add(new MapThing(thingType.house, new Point(e.X, e.Y)));
-                            break;
-                        case "rip":
-                            myMap.MapThings.Add(new MapThing(thingType.rip, new Point(e.X, e.Y)));
-                            break;
-                        case "city":
-                            myMap.MapThings.Add(new MapThing(thingType.city, new Point(e.X, e.Y)));
-                            break;
-                        case "gas":
-                            myMap.MapThings.Add(new MapThing(thingType.gas, new Point(e.X, e.Y)));
-                            break;
-                        case "ruine":
-                            myMap.MapThings.Add(new MapThing(thingType.ruine, new Point(e.X, e.Y)));
+                            currentMap.MapThings.Add(new MapThing(thingType.water, new Point(e.X, e.Y)));
                             break;
                     }
                     break;
                 case State.move:
                     break;
             }
+            string mapJSON = JsonSerializer.Serialize<Map>(currentMap);
+            Map newMap = JsonSerializer.Deserialize<Map>(mapJSON);
+            maps.Add(newMap);
             UpdateMap();
         }
 
@@ -340,7 +365,7 @@ namespace FireCard
             this.Enabled = true;
             if (Thing.idAdding)
             {
-                myMap.Things.Add(new Thing(new Point(x, y), Thing.newItemName, Thing.newItemDirection.ToString(), Thing.newItemHighth.ToString()));
+                currentMap.Things.Add(new Thing(new Point(x, y), Thing.newItemName, Thing.newItemDirection.ToString(), Thing.newItemHighth.ToString()));
                 Thing.idAdding = false;
             }
             UpdateMap();
@@ -349,11 +374,11 @@ namespace FireCard
         private void Check_Mouse(MouseEventArgs e, out int temp)       //Getting temp for our choosed object
         {
             int temps = -1;
-            for (int i = 0; i < myMap.Things.Count; i++)
+            for (int i = 0; i < currentMap.Things.Count; i++)
             {
-                if ((e.X < myMap.Things[i].Position.X + 20) && (e.X + 20 > myMap.Things[i].Position.X))
+                if ((e.X < currentMap.Things[i].Position.X + 20) && (e.X + 20 > currentMap.Things[i].Position.X))
                 {
-                    if ((e.Y < myMap.Things[i].Position.Y + 20) && (e.Y + 20 > myMap.Things[i].Position.Y))
+                    if ((e.Y < currentMap.Things[i].Position.Y + 20) && (e.Y + 20 > currentMap.Things[i].Position.Y))
                     {
                         temps = i;
                     }
@@ -365,11 +390,11 @@ namespace FireCard
         private int CheckPoints(MouseEventArgs e)
         {
             int temps = -1;
-            for (int i = 0; i < myMap.TempPoints.Count; i++)
+            for (int i = 0; i < currentMap.TempPoints.Count; i++)
             {
-                if ((e.X < myMap.TempPoints[i].Position.X + 20) && (e.X + 20 > myMap.TempPoints[i].Position.X))
+                if ((e.X < currentMap.TempPoints[i].Position.X + 20) && (e.X + 20 > currentMap.TempPoints[i].Position.X))
                 {
-                    if ((e.Y < myMap.TempPoints[i].Position.Y + 20) && (e.Y + 20 > myMap.TempPoints[i].Position.Y))
+                    if ((e.Y < currentMap.TempPoints[i].Position.Y + 20) && (e.Y + 20 > currentMap.TempPoints[i].Position.Y))
                     {
                         temps = i;
                     }
@@ -378,20 +403,29 @@ namespace FireCard
             return temps;
         }
 
-        private int CheckLiner(MouseEventArgs e)
+        private bool CheckLiner(MouseEventArgs e, out int temps)
         {
-            int temps = -1;
-            for (int i = 0; i < myMap.DrawedSoilders.Count; i++)
+            temps = -1;
+            bool isReversed = false;
+            for (int i = 0; i < currentMap.DrawedSoilders.Count; i++)
             {
-                if ((e.X < myMap.DrawedSoilders[i].Position.X + 20) && (e.X + 20 > myMap.DrawedSoilders[i].Position.X))
+                if ((e.X < currentMap.DrawedSoilders[i].Position.X + 20) && (e.X + 20 > currentMap.DrawedSoilders[i].Position.X))
                 {
-                    if ((e.Y < myMap.DrawedSoilders[i].Position.Y + 20) && (e.Y + 20 > myMap.DrawedSoilders[i].Position.Y))
+                    if ((e.Y < currentMap.DrawedSoilders[i].Position.Y + 20) && (e.Y + 20 > currentMap.DrawedSoilders[i].Position.Y))
                     {
                         temps = i;
                     }
                 }
+                else if ((e.X < currentMap.DrawedSoilders[i].ReservedPosition.X + 20) && (e.X + 20 > currentMap.DrawedSoilders[i].ReservedPosition.X))
+                {
+                    if ((e.Y < currentMap.DrawedSoilders[i].ReservedPosition.Y + 20) && (e.Y + 20 > currentMap.DrawedSoilders[i].ReservedPosition.Y))
+                    {
+                        temps = i;
+                        isReversed = true;
+                    }
+                }
             }
-            return temps;
+            return isReversed;
         }
 
         private void map_MouseUp(object sender, MouseEventArgs e)
@@ -419,7 +453,7 @@ namespace FireCard
             {
                 if (IsClicked && checker >= 0)
                 {
-                    myMap.Things[checker].Position = new Point(e.X, e.Y);
+                    currentMap.Things[checker].Position = new Point(e.X, e.Y);
                 }
             }
             Position.Text = $"Position : {e.X} {e.Y}";
@@ -459,7 +493,7 @@ namespace FireCard
                             buttons[i].Enabled = true;
                         }
                     }
-                    myMap.TempPoints = new List<TempPoint>
+                    currentMap.TempPoints = new List<TempPoint>
                     {
                         new TempPoint(new Point(87,68), Color.LightGreen),
                         new TempPoint(new Point(353,68), Color.LightGreen),
@@ -494,7 +528,7 @@ namespace FireCard
                             buttons[i].Enabled = true;
                         }
                     }
-                    myMap.TempPoints = Constants.namedPoints.ToList();
+                    currentMap.TempPoints = Constants.namedPoints.ToList();
                     posLabel.Visible = true;
                     state = State.r3;
                     break;
@@ -519,7 +553,7 @@ namespace FireCard
                             buttons[i].Visible = true;
                         }
                     }
-                    myMap.TempPoints = new List<TempPoint> { };
+                    currentMap.TempPoints = new List<TempPoint> { };
                     state = State.r4;
                     fire1.PerformClick();
                     break;
@@ -575,9 +609,13 @@ namespace FireCard
                             buttons[i].Visible = false;
                         }
                     }
-                    for (int i = 0; i < myMap.DrawedSoilders.Count; i++)
+                    for (int i = 0; i < currentMap.DrawedSoilders.Count; i++)
                     {
-                        myMap.TempPoints.Add(new TempPoint(new Point(myMap.DrawedSoilders[i].Position.X - 5, myMap.DrawedSoilders[i].Position.Y)));
+                        currentMap.TempPoints.Add(new TempPoint(new Point(currentMap.DrawedSoilders[i].Position.X - 5, currentMap.DrawedSoilders[i].Position.Y)));
+                        if(currentMap.DrawedSoilders[i].ReservedPosition.X !=0 && currentMap.DrawedSoilders[i].ReservedPosition.Y != 0)
+                        {
+                            currentMap.TempPoints.Add(new TempPoint(new Point(currentMap.DrawedSoilders[i].ReservedPosition.X - 5, currentMap.DrawedSoilders[i].ReservedPosition.Y)));
+                        }
                     }
                     state = State.r6;
                     break;
@@ -598,7 +636,7 @@ namespace FireCard
                 case "cancel":
                     ready1.Enabled = true;
                     state = State.r1;
-                    myMap = new Map();
+                    currentMap = new Map();
                     for (int i = 0; i < buttons.Count; i++)
                     {
                         if (!buttons[i].Name.Contains("ready"))
@@ -646,74 +684,88 @@ namespace FireCard
                     state = State.r3;
                     break;
                 case "enemy1":
-                    myMap.EnemyPict = Resources.Ataka1;
+                    currentMap.EnemyPict = Resources.Ataka1;
                     break;
                 case "enemy2":
-                    myMap.EnemyPict = Resources.Ataka2; //
+                    currentMap.EnemyPict = Resources.Ataka2; //
                     break;
                 case "enemy3":
-                    myMap.EnemyPict = Resources.Ataka3; //
+                    currentMap.EnemyPict = Resources.Ataka3; //
                     break;
                 case "baricade1":
                     choosed_baricade = 0;
-                    myMap.Baricade[choosed_baricade].Add(new List<Point>());
+                    currentMap.Baricade[choosed_baricade].Add(new List<Point>());
                     break;
                 case "baricade2":
                     choosed_baricade = 1;
-                    myMap.Baricade[choosed_baricade].Add(new List<Point>());
+                    currentMap.Baricade[choosed_baricade].Add(new List<Point>());
                     break;
                 case "baricade3":
                     choosed_baricade = 2;
-                    myMap.Baricade[choosed_baricade].Add(new List<Point>());
+                    currentMap.Baricade[choosed_baricade].Add(new List<Point>());
                     break;
                 case "fire1":
-                    myMap.ZonaVPict = Resources._123;
+                    currentMap.ZonaVPict = Resources._123;
                     break;
                 case "fire2":
-                    myMap.ZonaVPict = Resources._132;
+                    currentMap.ZonaVPict = Resources._132;
                     break;
                 case "fire3":
-                    myMap.ZonaVPict = Resources._213;
+                    currentMap.ZonaVPict = Resources._213;
                     break;
                 case "fire4":
-                    myMap.ZonaVPict = Resources._231;
+                    currentMap.ZonaVPict = Resources._231;
                     break;
                 case "fire5":
-                    myMap.ZonaVPict = Resources._312;
+                    currentMap.ZonaVPict = Resources._312;
                     break;
                 case "fire6":
-                    myMap.ZonaVPict = Resources._321;
+                    currentMap.ZonaVPict = Resources._321;
                     break;
                 case "tDraw1":
-                    mapThing = "grass";
+                    mapThing = "cerkva";
                     break;
                 case "tDraw2":
-                    mapThing = "water";
+                    mapThing = "house";
                     break;
                 case "tDraw3":
-                    mapThing = "rip";
+                    mapThing = "kamni";
                     break;
                 case "tDraw4":
-                    mapThing = "city";
+                    mapThing = "kurgan";
                     break;
                 case "tDraw5":
-                    mapThing = "gas";
+                    mapThing = "kuschi";
                     break;
                 case "tDraw6":
-                    mapThing = "ruine";
+                    mapThing = "pamyatnik";
                     break;
-
+                case "tDraw7":
+                    mapThing = "sad";
+                    break;
+                case "tDraw8":
+                    mapThing = "tree";
+                    break;
+                case "tDraw9":
+                    mapThing = "virubka";
+                    break;
+                case "tDraw10":
+                    mapThing = "vishka";
+                    break;
+                case "tDraw11":
+                    mapThing = "water";
+                    break;
             }
         }
 
         void ChoosePerson(SoilderTypes type, ref Button button)
         {
             bool isEmpty = true;
-            for (int i = 0; i < myMap.Soldiers[soilder_index].Count; i++)
+            for (int i = 0; i < currentMap.Soldiers[soilder_index].Count; i++)
             {
-                if (myMap.Soldiers[soilder_index][i].SoilderType == type)
+                if (currentMap.Soldiers[soilder_index][i].SoilderType == type)
                 {
-                    MessageBox.Show($"Обрано {myMap.Soldiers[soilder_index][i].Name}");
+                    MessageBox.Show($"Обрано {currentMap.Soldiers[soilder_index][i].Name}");
                     choosed_soilder = i;
                     isEmpty = false;
                     return;
@@ -727,7 +779,7 @@ namespace FireCard
 
         private void oriTable_Click(object sender, EventArgs e)
         {
-            oriTable table = new oriTable(myMap);
+            oriTable table = new oriTable(currentMap);
             table.Show();
         }
 
@@ -736,7 +788,7 @@ namespace FireCard
             Bitmap bmp = new Bitmap(700, 900);
             using (Graphics gr = Graphics.FromImage(bmp))
             {
-                myMap.Draw(gr);
+                currentMap.Draw(gr);
             }
             bmp.Save("map.jpg"); ;
             MessageBox.Show("Карта збережена в " + Application.ExecutablePath);
@@ -803,7 +855,7 @@ namespace FireCard
         {
 
             saveFileDialog1.FileName = "new Map.map";
-            string json = JsonSerializer.Serialize<Map>(myMap);
+            string json = JsonSerializer.Serialize<Map>(currentMap);
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             File.WriteAllText(saveFileDialog1.FileName, json);
@@ -828,8 +880,38 @@ namespace FireCard
                     json = reader.ReadToEnd();
                 }
             }
-            myMap = JsonSerializer.Deserialize<Map>(json);
+            currentMap = JsonSerializer.Deserialize<Map>(json);
             UpdateMap();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Z)
+            {
+                undoMap();
+                e.SuppressKeyPress = true;  // Stops other controls on the form receiving event.
+            }
+        }
+
+        private void undo_Click(object sender, EventArgs e)
+        {
+            undoMap();
+        }
+
+        void undoMap()
+        {
+            for (int i = 0; i < maps.Count-1; i++)
+            {
+                Console.WriteLine(i);
+                Console.WriteLine(maps[i].Things.Count);
+                Console.WriteLine("---------------------");
+            }
+            if (maps.Count > 1)
+            {
+                currentMap = maps[maps.Count-2];
+                maps.RemoveAt(maps.Count - 1);
+                UpdateMap();
+            }
         }
     }
     enum State { r1, r2, r3, r4, r5, r6, final, erause, move, reserved, paint }

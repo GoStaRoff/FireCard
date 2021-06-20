@@ -403,5 +403,38 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vishka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerkva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\virubka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pamyatnik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kuschi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kamni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kurgan.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

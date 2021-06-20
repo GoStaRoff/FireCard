@@ -151,8 +151,8 @@
   <data name="BTRr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\BTRr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="city" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\city.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cerkva" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cerkva.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="create" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\create.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,15 +187,6 @@
   <data name="fon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\fon4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gardens" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\gardens.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\gas.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="grass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\grass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="GRENADER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\GRENADER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -207,6 +198,15 @@
   </data>
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kamni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kamni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kurgan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kurgan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kuschi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kuschi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="line" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Marks\line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,23 +238,17 @@
   <data name="open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pamyatnik" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pamyatnik.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RIFLEMAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\RIFLEMAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RIFLEMANr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\RIFLEMANr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\rip.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="river" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\river.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="road" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\road.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ruine" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\ruine.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\save.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,8 +262,20 @@
   <data name="TANKr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\TANKr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tree" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tree.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="undo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\undo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="virubka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\virubka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vishka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vishka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="water" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\water.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\water.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

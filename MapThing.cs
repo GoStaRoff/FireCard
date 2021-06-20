@@ -3,7 +3,19 @@ using System.Drawing;
 
 namespace FireCard
 {
-    public enum thingType { garden, house , rip, city, gas, ruine}
+    public enum thingType {
+        tree,
+        virubka,
+        vishka,
+        water,
+        sad,
+        pamyatnik,
+        kuschi,
+        kurgan,
+        kamni,
+        cerkva,
+        house
+    }
     [Serializable]
     public class MapThing
     {
