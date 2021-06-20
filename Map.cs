@@ -17,7 +17,6 @@ namespace FireCard
         public Point Enemy { get; set; }
         [JsonIgnore]
         public Bitmap EnemyPict { get; set; }
-
         public string EnemyPictSer
         {
             get
@@ -37,7 +36,6 @@ namespace FireCard
         }
         [JsonIgnore]
         public Bitmap ZonaVPict { get; set; }
-
         public string zonaVSer
         {
             get
@@ -56,13 +54,15 @@ namespace FireCard
             }
         }
         public Point Position { get; set; }
+        public static bool BTR { get; set; }
+        public static bool TANK { get; set; }
         public bool isMapEnabled { get; set; }
         public static string[] Direction { get; set; }
         public List<Soldier> DrawedSoilders { get; set; }
         public List<Thing> Things { get; set; }
         public List<List<Soldier>> Soldiers { get; set; }
         public Point FireArea { get; set; }
-        public List<List<List<Point>>> Baricade { get; set; } //CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT CURRENT 
+        public List<List<List<Point>>> Baricade { get; set; }
         public static TypeSoilders typeSoilders { get; set; }
         public List<MapThing> MapThings { get; set; }
         public Map(List<TempPoint> tempPoints, Point enemy, Bitmap enemyPict, Bitmap zonaVPict, Point position
@@ -134,9 +134,6 @@ namespace FireCard
             MapThings = new List<MapThing>();
 
         }
-
-
-
         public void Draw(Graphics g)
         {
             for (int i = 0; i < MapThings.Count; i++)
@@ -190,7 +187,8 @@ namespace FireCard
             }
             if (Enemy != (new Point(0, 0)))
             {
-                g.DrawImage(EnemyPict, Enemy.X - 45, Enemy.Y - 70, 90, 120);
+                try { g.DrawImage(EnemyPict, Enemy.X - 45, Enemy.Y - 70, 90, 120); } catch { }
+                
             }
             for (int i = 0; i < TempPoints.Count; i++)
             {
@@ -203,7 +201,8 @@ namespace FireCard
             }
             if (FireArea != new Point(0, 0))
             {
-                g.DrawImage(ZonaVPict, FireArea.X - 40, FireArea.Y - 14, 80, 28);
+                try { g.DrawImage(ZonaVPict, FireArea.X - 40, FireArea.Y - 14, 80, 28); } catch { }
+                
             }
             Pen greenPen = new Pen(Color.Green);
             greenPen.Width = 3;

@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FireCard.exe" size="6265824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FireCard.exe" size="6550496">
       <assemblyIdentity name="FireCard" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EqrMUTzH7g74N4qv8q20RsVtZRrCcm4BfC+4pA/BLOI=</dsig:DigestValue>
+        <dsig:DigestValue>Cr9kjk7wRr6FchfhsqcwS7DTTbE8Ece0yS4eZAMKDkk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

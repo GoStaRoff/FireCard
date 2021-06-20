@@ -65,6 +65,8 @@ namespace FireCard
                     Map.typeSoilders = TypeSoilders.third;
                     break;
             }
+            Map.BTR = checkBTR.Checked;
+            Map.TANK = checkTANK.Checked;
         }
         private void discardButton_Click(object sender, EventArgs e)
         {

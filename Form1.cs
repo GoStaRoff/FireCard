@@ -63,6 +63,10 @@ namespace FireCard
             }
             g = map.CreateGraphics();
             posLabel.Visible = false;
+            this.Enabled = false;
+            Create createWindow = new Create(this);
+            createWindow.FormClosed += Create_FormClosed;
+            createWindow.Show();
         }
 
         private void hideThings_Click(object sender, EventArgs e)
@@ -165,7 +169,10 @@ namespace FireCard
                     soilder_index = 2;
                     break;
             }
-
+            currentMap.Soldiers[soilder_index].Add(
+                    new Soldier("БТР", SoilderTypes.BTR));
+            currentMap.Soldiers[soilder_index].Add(
+                    new Soldier("Танк", SoilderTypes.TANK));
         }
 
         private void map_Paint(object sender, PaintEventArgs e)
@@ -274,36 +281,75 @@ namespace FireCard
                     currentMap.Baricade[choosed_baricade][currentMap.Baricade[choosed_baricade].Count - 1].Add(new Point(e.X, e.Y));
                     break;
                 case State.r6:
-                    if (lineCounter == 1)
+                    bool isReversed = CheckReserved(e);
+                    if (lineCounter == 228)
                     {
-                        bool isReversed = CheckLiner(e,out choosed_liner);
-                        Console.WriteLine(isReversed);
-                        if (choosed_liner == -1)
-                        {
-                            return;
-                        }
-                        if (currentMap.DrawedSoilders[choosed_liner].Lines.Count == 3)
-                        {
-                            MessageBox.Show("Не може бути більше смуг вогню");
-                            return;
-                        }
-                        currentMap.DrawedSoilders[choosed_liner].Lines.Add(new Line(currentMap.DrawedSoilders[choosed_liner].Position));
-                        lineCounter++;
+                        isReversed = true;
                     }
-                    else if (lineCounter == 2)
-                    {
-                        for (int i = 0; i < currentMap.DrawedSoilders[choosed_liner].Lines.Count; i++)
+                    if (isReversed) {
+                        if (lineCounter == 1)
                         {
-                            if (currentMap.DrawedSoilders[choosed_liner].Lines[i].EndPoint == new Point(0, 0))
+                            choosed_liner = CheckLiner(e);
+                            if (choosed_liner == -1)
                             {
-                                currentMap.DrawedSoilders[choosed_liner].Lines[i].EndPoint = new Point(e.X, e.Y);
+                                return;
                             }
+                            if (currentMap.DrawedSoilders[choosed_liner].ReservedLines.Count == 3)
+                            {
+                                MessageBox.Show("Не може бути більше смуг вогню");
+                                return;
+                            }
+                            currentMap.DrawedSoilders[choosed_liner].ReservedLines.Add(new Line(currentMap.DrawedSoilders[choosed_liner].ReservedPosition));
+                            lineCounter=228;
                         }
-                        lineCounter = 1;
+                        else if (lineCounter == 228)
+                        {
+                            for (int i = 0; i < currentMap.DrawedSoilders[choosed_liner].ReservedLines.Count; i++)
+                            {
+                                if (currentMap.DrawedSoilders[choosed_liner].ReservedLines[i].EndPoint == new Point(0, 0))
+                                {
+                                    currentMap.DrawedSoilders[choosed_liner].ReservedLines[i].EndPoint = new Point(e.X, e.Y);
+                                }
+                            }
+                            lineCounter = 1;
+                        }
+                        else
+                        {
+                            return;
+                        }
                     }
                     else
                     {
-                        return;
+                        if (lineCounter == 1)
+                        {
+                            choosed_liner = CheckLiner(e);
+                            if (choosed_liner == -1)
+                            {
+                                return;
+                            }
+                            if (currentMap.DrawedSoilders[choosed_liner].Lines.Count == 3)
+                            {
+                                MessageBox.Show("Не може бути більше смуг вогню");
+                                return;
+                            }
+                            currentMap.DrawedSoilders[choosed_liner].Lines.Add(new Line(currentMap.DrawedSoilders[choosed_liner].Position));
+                            lineCounter++;
+                        }
+                        else if (lineCounter == 2)
+                        {
+                            for (int i = 0; i < currentMap.DrawedSoilders[choosed_liner].Lines.Count; i++)
+                            {
+                                if (currentMap.DrawedSoilders[choosed_liner].Lines[i].EndPoint == new Point(0, 0))
+                                {
+                                    currentMap.DrawedSoilders[choosed_liner].Lines[i].EndPoint = new Point(e.X, e.Y);
+                                }
+                            }
+                            lineCounter = 1;
+                        }
+                        else
+                        {
+                            return;
+                        }
                     }
                     break;
                 case State.final:
@@ -403,10 +449,9 @@ namespace FireCard
             return temps;
         }
 
-        private bool CheckLiner(MouseEventArgs e, out int temps)
+        private int CheckLiner(MouseEventArgs e)
         {
-            temps = -1;
-            bool isReversed = false;
+            int temps = -1;
             for (int i = 0; i < currentMap.DrawedSoilders.Count; i++)
             {
                 if ((e.X < currentMap.DrawedSoilders[i].Position.X + 20) && (e.X + 20 > currentMap.DrawedSoilders[i].Position.X))
@@ -421,11 +466,26 @@ namespace FireCard
                     if ((e.Y < currentMap.DrawedSoilders[i].ReservedPosition.Y + 20) && (e.Y + 20 > currentMap.DrawedSoilders[i].ReservedPosition.Y))
                     {
                         temps = i;
-                        isReversed = true;
                     }
                 }
             }
-            return isReversed;
+            return temps;
+        }
+
+        private bool CheckReserved(MouseEventArgs e)
+        {
+            bool temps = false;
+            for (int i = 0; i < currentMap.DrawedSoilders.Count; i++)
+            {
+                if ((e.X < currentMap.DrawedSoilders[i].ReservedPosition.X + 20) && (e.X + 20 > currentMap.DrawedSoilders[i].ReservedPosition.X))
+                {
+                    if ((e.Y < currentMap.DrawedSoilders[i].ReservedPosition.Y + 20) && (e.Y + 20 > currentMap.DrawedSoilders[i].ReservedPosition.Y))
+                    {
+                        temps = true;
+                    }
+                }
+            }
+            return temps;
         }
 
         private void map_MouseUp(object sender, MouseEventArgs e)
@@ -518,6 +578,14 @@ namespace FireCard
                         if (buttons[i].Name.Contains("person"))
                         {
                             buttons[i].Visible = true;
+                            if (!Map.TANK)
+                            {
+                                person10.Visible = false;
+                            }
+                            if (!Map.BTR)
+                            {
+                                person9.Visible = false;
+                            }
                         }
                         if (buttons[i].Name.Equals("ready2") || buttons[i].Name.Equals("ready1") || buttons[i].Name.Equals("ready5") || buttons[i].Name.Equals("ready6") || buttons[i].Name.Equals("ready4") || buttons[i].Name.Equals("cancel"))
                         {
@@ -676,11 +744,11 @@ namespace FireCard
                     state = State.r3;
                     break;
                 case "person9":
-                    MessageBox.Show("Обрано БТР");
+                    ChoosePerson(SoilderTypes.BTR, ref button);
                     state = State.r3;
                     break;
                 case "person10":
-                    MessageBox.Show("Обрано ТАНК");
+                    ChoosePerson(SoilderTypes.TANK, ref button);
                     state = State.r3;
                     break;
                 case "enemy1":

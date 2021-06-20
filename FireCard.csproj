@@ -436,5 +436,41 @@
   <ItemGroup>
     <None Include="Resources\kurgan.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TANKr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMPr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTRr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GRENADER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GRENADERr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MACHINE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MACHINEr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RIFLEMAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RIFLEMANr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TANK.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.create = new System.Windows.Forms.ToolStripMenuItem();
@@ -539,7 +540,7 @@
             // 
             // person10
             // 
-            this.person10.BackgroundImage = global::FireCard.Properties.Resources.TANK;
+            this.person10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("person10.BackgroundImage")));
             this.person10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.person10.Location = new System.Drawing.Point(591, 2);
             this.person10.Margin = new System.Windows.Forms.Padding(2);
@@ -552,7 +553,7 @@
             // 
             // person9
             // 
-            this.person9.BackgroundImage = global::FireCard.Properties.Resources.BTR;
+            this.person9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("person9.BackgroundImage")));
             this.person9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.person9.Location = new System.Drawing.Point(526, 2);
             this.person9.Margin = new System.Windows.Forms.Padding(2);
@@ -565,7 +566,7 @@
             // 
             // person7
             // 
-            this.person7.BackgroundImage = global::FireCard.Properties.Resources.GRENADER;
+            this.person7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("person7.BackgroundImage")));
             this.person7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.person7.Location = new System.Drawing.Point(398, 2);
             this.person7.Margin = new System.Windows.Forms.Padding(2);
@@ -578,7 +579,7 @@
             // 
             // person5
             // 
-            this.person5.BackgroundImage = global::FireCard.Properties.Resources.MACHINE;
+            this.person5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("person5.BackgroundImage")));
             this.person5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.person5.Location = new System.Drawing.Point(268, 2);
             this.person5.Margin = new System.Windows.Forms.Padding(2);
@@ -591,7 +592,7 @@
             // 
             // person3
             // 
-            this.person3.BackgroundImage = global::FireCard.Properties.Resources.RIFLEMAN;
+            this.person3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("person3.BackgroundImage")));
             this.person3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.person3.Location = new System.Drawing.Point(140, 2);
             this.person3.Margin = new System.Windows.Forms.Padding(2);
@@ -604,7 +605,7 @@
             // 
             // person1
             // 
-            this.person1.BackgroundImage = global::FireCard.Properties.Resources.BMP;
+            this.person1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("person1.BackgroundImage")));
             this.person1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.person1.Location = new System.Drawing.Point(10, 2);
             this.person1.Margin = new System.Windows.Forms.Padding(2);
@@ -618,13 +619,13 @@
             // persons
             // 
             this.persons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.persons.Controls.Add(this.tDraw5);
             this.persons.Controls.Add(this.tDraw11);
             this.persons.Controls.Add(this.tDraw10);
             this.persons.Controls.Add(this.tDraw9);
             this.persons.Controls.Add(this.tDraw8);
             this.persons.Controls.Add(this.tDraw7);
             this.persons.Controls.Add(this.tDraw6);
-            this.persons.Controls.Add(this.tDraw5);
             this.persons.Controls.Add(this.tDraw4);
             this.persons.Controls.Add(this.tDraw3);
             this.persons.Controls.Add(this.tDraw2);
@@ -639,7 +640,6 @@
             this.persons.Controls.Add(this.paint1);
             this.persons.Controls.Add(this.paint2);
             this.persons.Controls.Add(this.paint0);
-            this.persons.Controls.Add(this.posLabel);
             this.persons.Controls.Add(this.fire5);
             this.persons.Controls.Add(this.person7);
             this.persons.Controls.Add(this.person9);
@@ -658,6 +658,7 @@
             this.persons.Controls.Add(this.baricade3);
             this.persons.Controls.Add(this.enemy3);
             this.persons.Controls.Add(this.person10);
+            this.persons.Controls.Add(this.posLabel);
             this.persons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.persons.Location = new System.Drawing.Point(128, 660);
             this.persons.Margin = new System.Windows.Forms.Padding(2);
@@ -672,7 +673,7 @@
             this.tDraw11.Location = new System.Drawing.Point(630, 4);
             this.tDraw11.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw11.Name = "tDraw11";
-            this.tDraw11.Size = new System.Drawing.Size(58, 53);
+            this.tDraw11.Size = new System.Drawing.Size(65, 53);
             this.tDraw11.TabIndex = 76;
             this.tDraw11.UseMnemonic = false;
             this.tDraw11.UseVisualStyleBackColor = true;
@@ -686,7 +687,7 @@
             this.tDraw10.Location = new System.Drawing.Point(568, 4);
             this.tDraw10.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw10.Name = "tDraw10";
-            this.tDraw10.Size = new System.Drawing.Size(58, 53);
+            this.tDraw10.Size = new System.Drawing.Size(66, 53);
             this.tDraw10.TabIndex = 75;
             this.tDraw10.UseMnemonic = false;
             this.tDraw10.UseVisualStyleBackColor = true;
@@ -700,7 +701,7 @@
             this.tDraw9.Location = new System.Drawing.Point(503, 4);
             this.tDraw9.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw9.Name = "tDraw9";
-            this.tDraw9.Size = new System.Drawing.Size(58, 53);
+            this.tDraw9.Size = new System.Drawing.Size(71, 53);
             this.tDraw9.TabIndex = 74;
             this.tDraw9.UseMnemonic = false;
             this.tDraw9.UseVisualStyleBackColor = true;
@@ -714,7 +715,7 @@
             this.tDraw8.Location = new System.Drawing.Point(440, 3);
             this.tDraw8.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw8.Name = "tDraw8";
-            this.tDraw8.Size = new System.Drawing.Size(58, 53);
+            this.tDraw8.Size = new System.Drawing.Size(68, 53);
             this.tDraw8.TabIndex = 73;
             this.tDraw8.UseMnemonic = false;
             this.tDraw8.UseVisualStyleBackColor = true;
@@ -728,7 +729,7 @@
             this.tDraw7.Location = new System.Drawing.Point(378, 3);
             this.tDraw7.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw7.Name = "tDraw7";
-            this.tDraw7.Size = new System.Drawing.Size(58, 53);
+            this.tDraw7.Size = new System.Drawing.Size(69, 53);
             this.tDraw7.TabIndex = 72;
             this.tDraw7.UseMnemonic = false;
             this.tDraw7.UseVisualStyleBackColor = true;
@@ -742,7 +743,7 @@
             this.tDraw6.Location = new System.Drawing.Point(313, 3);
             this.tDraw6.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw6.Name = "tDraw6";
-            this.tDraw6.Size = new System.Drawing.Size(58, 53);
+            this.tDraw6.Size = new System.Drawing.Size(69, 53);
             this.tDraw6.TabIndex = 71;
             this.tDraw6.UseMnemonic = false;
             this.tDraw6.UseVisualStyleBackColor = true;
@@ -756,7 +757,7 @@
             this.tDraw5.Location = new System.Drawing.Point(251, 3);
             this.tDraw5.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw5.Name = "tDraw5";
-            this.tDraw5.Size = new System.Drawing.Size(58, 53);
+            this.tDraw5.Size = new System.Drawing.Size(66, 53);
             this.tDraw5.TabIndex = 70;
             this.tDraw5.UseMnemonic = false;
             this.tDraw5.UseVisualStyleBackColor = true;
@@ -770,7 +771,7 @@
             this.tDraw4.Location = new System.Drawing.Point(189, 2);
             this.tDraw4.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw4.Name = "tDraw4";
-            this.tDraw4.Size = new System.Drawing.Size(58, 53);
+            this.tDraw4.Size = new System.Drawing.Size(74, 53);
             this.tDraw4.TabIndex = 69;
             this.tDraw4.UseMnemonic = false;
             this.tDraw4.UseVisualStyleBackColor = true;
@@ -784,7 +785,7 @@
             this.tDraw3.Location = new System.Drawing.Point(127, 2);
             this.tDraw3.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw3.Name = "tDraw3";
-            this.tDraw3.Size = new System.Drawing.Size(58, 53);
+            this.tDraw3.Size = new System.Drawing.Size(66, 53);
             this.tDraw3.TabIndex = 68;
             this.tDraw3.UseMnemonic = false;
             this.tDraw3.UseVisualStyleBackColor = true;
@@ -798,7 +799,7 @@
             this.tDraw2.Location = new System.Drawing.Point(62, 2);
             this.tDraw2.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw2.Name = "tDraw2";
-            this.tDraw2.Size = new System.Drawing.Size(58, 53);
+            this.tDraw2.Size = new System.Drawing.Size(74, 53);
             this.tDraw2.TabIndex = 67;
             this.tDraw2.UseMnemonic = false;
             this.tDraw2.UseVisualStyleBackColor = true;
@@ -824,7 +825,7 @@
             this.tDraw1.Location = new System.Drawing.Point(0, 2);
             this.tDraw1.Margin = new System.Windows.Forms.Padding(2);
             this.tDraw1.Name = "tDraw1";
-            this.tDraw1.Size = new System.Drawing.Size(58, 53);
+            this.tDraw1.Size = new System.Drawing.Size(69, 53);
             this.tDraw1.TabIndex = 63;
             this.tDraw1.UseMnemonic = false;
             this.tDraw1.UseVisualStyleBackColor = true;
@@ -833,7 +834,7 @@
             // 
             // paint7
             // 
-            this.paint7.BackgroundImage = global::FireCard.Properties.Resources.TANK;
+            this.paint7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("paint7.BackgroundImage")));
             this.paint7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.paint7.Location = new System.Drawing.Point(469, 3);
             this.paint7.Margin = new System.Windows.Forms.Padding(2);
@@ -846,7 +847,7 @@
             // 
             // paint8
             // 
-            this.paint8.BackgroundImage = global::FireCard.Properties.Resources.TANK;
+            this.paint8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("paint8.BackgroundImage")));
             this.paint8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.paint8.Location = new System.Drawing.Point(533, 4);
             this.paint8.Margin = new System.Windows.Forms.Padding(2);
@@ -859,7 +860,7 @@
             // 
             // paint6
             // 
-            this.paint6.BackgroundImage = global::FireCard.Properties.Resources.TANK;
+            this.paint6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("paint6.BackgroundImage")));
             this.paint6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.paint6.Location = new System.Drawing.Point(404, 3);
             this.paint6.Margin = new System.Windows.Forms.Padding(2);
@@ -872,7 +873,7 @@
             // 
             // paint4
             // 
-            this.paint4.BackgroundImage = global::FireCard.Properties.Resources.TANK;
+            this.paint4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("paint4.BackgroundImage")));
             this.paint4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.paint4.Location = new System.Drawing.Point(275, 3);
             this.paint4.Margin = new System.Windows.Forms.Padding(2);
@@ -885,7 +886,7 @@
             // 
             // paint5
             // 
-            this.paint5.BackgroundImage = global::FireCard.Properties.Resources.TANK;
+            this.paint5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("paint5.BackgroundImage")));
             this.paint5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.paint5.Location = new System.Drawing.Point(340, 4);
             this.paint5.Margin = new System.Windows.Forms.Padding(2);
@@ -898,7 +899,7 @@
             // 
             // paint3
             // 
-            this.paint3.BackgroundImage = global::FireCard.Properties.Resources.TANK;
+            this.paint3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("paint3.BackgroundImage")));
             this.paint3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.paint3.Location = new System.Drawing.Point(211, 3);
             this.paint3.Margin = new System.Windows.Forms.Padding(2);
@@ -911,7 +912,7 @@
             // 
             // paint1
             // 
-            this.paint1.BackgroundImage = global::FireCard.Properties.Resources.TANK;
+            this.paint1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("paint1.BackgroundImage")));
             this.paint1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.paint1.Location = new System.Drawing.Point(82, 2);
             this.paint1.Margin = new System.Windows.Forms.Padding(2);
@@ -924,7 +925,7 @@
             // 
             // paint2
             // 
-            this.paint2.BackgroundImage = global::FireCard.Properties.Resources.TANK;
+            this.paint2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("paint2.BackgroundImage")));
             this.paint2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.paint2.Location = new System.Drawing.Point(146, 2);
             this.paint2.Margin = new System.Windows.Forms.Padding(2);
@@ -937,7 +938,7 @@
             // 
             // paint0
             // 
-            this.paint0.BackgroundImage = global::FireCard.Properties.Resources.TANK;
+            this.paint0.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("paint0.BackgroundImage")));
             this.paint0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.paint0.Location = new System.Drawing.Point(17, 2);
             this.paint0.Margin = new System.Windows.Forms.Padding(2);

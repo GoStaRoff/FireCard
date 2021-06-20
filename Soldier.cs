@@ -11,6 +11,7 @@ namespace FireCard
         public Soldier()
         {
             Lines = new List<Line>();
+            ReservedLines = new List<Line>();
             ReservedPosition = new Point(0, 0);
         }
 
@@ -19,6 +20,7 @@ namespace FireCard
             Name = name;
             SoilderType = soilderType;
             Lines = new List<Line>();
+            ReservedLines = new List<Line>();
             ReservedPosition = new Point(0, 0);
         }
 
@@ -26,6 +28,8 @@ namespace FireCard
         public Point Position { get; set; }
         public SoilderTypes SoilderType { get; set; }
         public Point ReservedPosition { get; set; }
+
+        public List<Line> ReservedLines { get; set; }
         public List<Line> Lines { get; set; }
         public void Draw(Graphics g)
         {
@@ -66,8 +70,17 @@ namespace FireCard
             }
             for (int i = 0; i < Lines.Count; i++)
             {
+                Console.WriteLine(Lines[i].StartPoint);
+                Console.WriteLine(Lines[i].EndPoint);
                 if (i == 2) pen.DashPattern = new float[] { 6F, 6F }; ;
                 Lines[i].Draw(g, pen);
+            }
+            for (int i = 0; i < ReservedLines.Count; i++)
+            {
+                Console.WriteLine(ReservedLines[i].StartPoint);
+                Console.WriteLine(ReservedLines[i].EndPoint);
+                if (i == 2) pen.DashPattern = new float[] { 6F, 6F }; ;
+                ReservedLines[i].Draw(g, pen);
             }
         }
     }
